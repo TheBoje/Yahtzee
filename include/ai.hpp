@@ -8,7 +8,7 @@
 #include "player.hpp"
 
 namespace yahtzee::entity {
-    class AI : public player {
+    class ai : public player {
     public:
         void turn() override;
     };
