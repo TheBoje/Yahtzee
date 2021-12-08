@@ -43,6 +43,7 @@ add_executable(main
 # Now simply link against gtest or gtest_main as needed. Eg
 add_test(NAME example_test COMMAND example)
 
+enable_testing()
 add_executable(tests
         src/dice.cpp
         tests/dice_tests.cpp
