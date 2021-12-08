@@ -6,4 +6,18 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(src)
 
 add_executable(Projet_COO
-        src/main.cpp)
+        src/main.cpp
+        include/dice.hpp
+        include/roll.hpp
+        include/game_manager.hpp
+        include/level.hpp
+        include/player.hpp
+        include/figure.hpp
+        include/sup_part.hpp
+        include/inf_part.hpp
+        include/small_straight.hpp
+        include/huge_straight.hpp
+        include/yathzee.hpp
+        include/toak.hpp
+        include/square.hpp
+        include/chance.hpp)
