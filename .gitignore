@@ -130,3 +130,6 @@ gen
 vpp/.lock
 vpp/*.vpp.bak
 vpp/.vppprefdata
+
+#Ctest
+Testing

@@ -41,6 +41,7 @@ add_executable(main
         src/main.cpp)
 
 enable_testing()
+
 add_executable(tests
         src/dice.cpp
         tests/dice_tests.cpp
