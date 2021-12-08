@@ -28,7 +28,9 @@ namespace yahtzee {
         /**
          * @return the sum of the dices value
          */
-        int operator+(const dice& dice1);
+        int operator+(const dice& d);
+
+        int operator+(int val);
     };
 }
 
