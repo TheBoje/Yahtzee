@@ -3,10 +3,20 @@ project(Projet_COO)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(include)
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        # Specify the commit you depend on and update it regularly.
+        URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+)
+
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
 include_directories(src)
 
-add_executable(Projet_COO
+add_executable(main
         include/ai.hpp
         include/chance.hpp
         include/constant.hpp
@@ -26,5 +36,17 @@ add_executable(Projet_COO
         include/square.hpp
         include/sup_part.hpp
         include/toak.hpp
-        include/yathzee.hpp
+        include/yahtzee.hpp
+        src/dice.cpp
         src/main.cpp)
+
+# Now simply link against gtest or gtest_main as needed. Eg
+add_test(NAME example_test COMMAND example)
+
+add_executable(tests
+        src/dice.cpp
+        tests/dice_tests.cpp
+        src/main_tests.cpp)
+target_link_libraries(tests gtest_main)
+add_test(NAME tests COMMAND tests)
+

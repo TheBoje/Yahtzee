@@ -21,7 +21,7 @@ namespace yahtzee {
          */
         void roll();
 
-        int get_value();
+        int get_value() const;
 
         std::ostream& operator<<(std::ostream& os);
 
