@@ -14,38 +14,17 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-include_directories(src)
+# Grab every file fulfilling last arg regex
+# This makes `add_executable` less painful to read.
+file(GLOB_RECURSE SOURCES_INCLUDE RELATIVE ${CMAKE_SOURCE_DIR} "include/**/*.hpp")
+file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/**/*.cpp")
+file(GLOB_RECURSE SOURCES_TESTS RELATIVE ${CMAKE_SOURCE_DIR} "tests/**/*.cpp")
 
-add_executable(main
-        include/ai.hpp
-        include/chance.hpp
-        include/constant.hpp
-        include/dice.hpp
-        include/easy.hpp
-        include/figure.hpp
-        include/game_manager.hpp
-        include/hard.hpp
-        include/huge_straight.hpp
-        include/impossible.hpp
-        include/inf_part.hpp
-        include/level.hpp
-        include/medium.hpp
-        include/player.hpp
-        include/roll.hpp
-        include/small_straight.hpp
-        include/square.hpp
-        include/sup_part.hpp
-        include/toak.hpp
-        include/yahtzee.hpp
-        src/dice.cpp
-        src/main.cpp)
+add_executable(main ${SOURCES_INCLUDE} ${SOURCES})
+add_executable(tests ${SOURCES_INCLUDE} ${SOURCES} ${SOURCES_TESTS})
 
 enable_testing()
 
-add_executable(tests
-        src/dice.cpp
-        tests/dice_tests.cpp
-        src/main_tests.cpp)
 target_link_libraries(tests gtest_main)
 add_test(NAME tests COMMAND tests)
 

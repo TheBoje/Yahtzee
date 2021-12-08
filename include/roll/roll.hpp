@@ -8,9 +8,9 @@
 #include <iostream>
 
 #include "dice.hpp"
-#include "constant.hpp"
+#include "../figures/constant.hpp"
 
-namespace yahtzee {
+namespace yahtzee::roll {
     class roll {
         dice _dices[NB_DICE];
         bool _kept[NB_DICE];

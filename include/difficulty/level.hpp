@@ -6,7 +6,7 @@
 #define PROJET_COO_LEVEL_HPP
 
 #include <vector>
-#include "player.hpp"
+#include "../entity/player.hpp"
 
 namespace yahtzee::difficulty {
     class level {

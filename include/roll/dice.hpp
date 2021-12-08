@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-namespace yahtzee {
+namespace yahtzee::roll {
     class dice {
         int _value;
 
@@ -30,7 +30,7 @@ namespace yahtzee {
          */
         int operator+(const dice& d);
 
-        int operator+(int val);
+        int operator+(int val) const;
     };
 }
 

@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-#include "figure.hpp"
+#include "../figures/figure.hpp"
 
 namespace yahtzee::entity {
     class player {

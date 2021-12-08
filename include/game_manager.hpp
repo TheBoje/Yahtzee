@@ -6,19 +6,20 @@
 #define PROJET_COO_GAME_MANAGER_HPP
 
 #include <vector>
-#include "level.hpp"
-#include "player.hpp"
-#include "roll.hpp"
+#include "difficulty/level.hpp"
+#include "entity/player.hpp"
+#include "roll/roll.hpp"
 
 namespace yahtzee {
     class game_manager {
     private:
         std::vector<yahtzee::entity::player> _players;
-        yahtzee::difficulty::level _level;
-        yahtzee::roll _roll;
+        yahtzee::difficulty::level * _level; // Is a pointer because it's an abstract class
+        yahtzee::roll::roll _roll;
 
     public:
         game_manager(yahtzee::difficulty::level level);
+        ~game_manager();
         bool turn();
     };
 }
