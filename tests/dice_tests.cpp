@@ -19,7 +19,7 @@ protected:
 };
 
 TEST_F(dice_tests, get_value) {
-    ASSERT_EQ(0, _d.get_value());
+    ASSERT_EQ(1, _d.get_value()); //TODO(Louis): this is not working on purpose
 }
 
 TEST_F(dice_tests, not_get_value) {
