@@ -21,4 +21,5 @@ add_executable(Projet_COO
         include/yathzee.hpp
         include/toak.hpp
         include/square.hpp
-        include/chance.hpp include/constant.hpp)
+        include/chance.hpp
+        include/constant.hpp)
