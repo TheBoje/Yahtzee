@@ -10,7 +10,7 @@
 namespace yahtzee::difficulty {
     class level {
     protected:
-        std::vector<yahtzee::entity::players> _players;
+        std::vector<yahtzee::entity::players> _players; // NOTE(Louis): Protected ?
     public:
         level(std::vector<yahtzee::entity::players> players); // TODO(Louis): Ca fait une copie du vecteur ou un passage par référence?
         virtual void turn() = 0;
