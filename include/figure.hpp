@@ -13,8 +13,13 @@ namespace yahtzee::figures {
         int _points = 0;
     public:
         virtual void parse(yahtzee::dice dices[]) = 0;
-        int get_points();
+        int get_points() const; // TODO(Louis): implémenter ici!
+        virtual int operator+ (const figure & f) = 0;
     };
+
+    int figure::get_points() const {
+        return _points;
+    }
 }
 
 #endif //PROJET_COO_FIGURE_HPP
