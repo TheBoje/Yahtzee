@@ -22,4 +22,9 @@ add_executable(Projet_COO
         include/toak.hpp
         include/square.hpp
         include/chance.hpp
-        include/constant.hpp)
+        include/constant.hpp
+        include/easy.hpp
+        include/medium.hpp
+        include/hard.hpp
+        include/impossible.hpp)
+
