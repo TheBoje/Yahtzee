@@ -12,6 +12,7 @@ add_executable(Projet_COO
         include/game_manager.hpp
         include/level.hpp
         include/player.hpp
+        include/AI.hpp
         include/figure.hpp
         include/sup_part.hpp
         include/inf_part.hpp

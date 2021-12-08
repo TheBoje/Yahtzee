@@ -6,11 +6,14 @@
 #define PROJET_COO_GAME_MANAGER_HPP
 
 #include <vector>
+#include "level.hpp"
+#include "player.hpp"
+#include "roll.hpp"
 
 namespace yahtzee {
     class game_manager {
     private:
-        std::vector<yahtzee::entity::players> _players;
+        std::vector<yahtzee::entity::player> _players;
         yahtzee::difficulty::level _level;
         yahtzee::roll _roll;
 

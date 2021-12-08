@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 
+#include "figure.hpp"
+
 namespace yahtzee::entity {
     class player {
     private:
@@ -16,7 +18,7 @@ namespace yahtzee::entity {
     public:
         player(std::string name);
         int get_score();
-        void turn();
+        virtual void turn();
     };
 }
 
