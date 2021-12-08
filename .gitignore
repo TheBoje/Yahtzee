@@ -85,6 +85,7 @@
 
 # CMake
 cmake-build-*/
+build/
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
@@ -124,3 +125,8 @@ fabric.properties
 *.iml
 out
 gen
+
+# Visual Paradigm stuff
+vpp/.lock
+vpp/*.vpp.bak
+vpp/.vppprefdata
