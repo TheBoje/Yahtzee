@@ -18,7 +18,7 @@ namespace yahtzee {
         yahtzee::roll::roll _roll;
 
     public:
-        game_manager(yahtzee::difficulty::level level);
+        game_manager(yahtzee::difficulty::level * level);
         ~game_manager();
         bool turn();
     };
