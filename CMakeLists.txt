@@ -24,8 +24,8 @@ file(GLOB_RECURSE SOURCES "src/**/*.cpp")
 file(GLOB_RECURSE SOURCES_TESTS "tests/**/*.cpp")
 
 add_executable(main src/main.cpp src/game_manager.cpp ${SOURCES_INCLUDE} ${SOURCES})
-add_executable(tests tests/test_main.cpp ${SOURCES_TESTS} ${SOURCES_INCLUDE} ${SOURCES})
-
+add_executable(tests tests/test_main.cpp ${SOURCES_INCLUDE} ${SOURCES} ${SOURCES_TESTS})
+include_directories(src include)
 enable_testing()
 
 target_link_libraries(tests gtest_main)

@@ -12,6 +12,8 @@ namespace game::figures {
     class square : public game::figures::figure {
         int _value;
     public:
+        square();
+        ~square();
         void parse(game::roll::dice dices[]) override;
     };
 }

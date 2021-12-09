@@ -12,6 +12,8 @@ namespace game::figures {
     class yahtzee : public game::figures::figure {
         int _value;
     public:
+        yahtzee();
+        ~yahtzee();
         void parse(game::roll::dice dices[]) override;
     };
 }

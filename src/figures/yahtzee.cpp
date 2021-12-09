@@ -3,3 +3,15 @@
 //
 
 #include "../../include/figures/yahtzee.hpp"
+
+void game::figures::yahtzee::parse(game::roll::dice *dices) {
+
+}
+
+game::figures::yahtzee::~yahtzee() {
+
+}
+
+game::figures::yahtzee::yahtzee() {
+
+}

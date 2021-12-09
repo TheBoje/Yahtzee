@@ -12,7 +12,9 @@ namespace game::figures {
     class small_straight : public game::figures::figure {
         int _start_val;
     public:
-        void parse(game::roll::dice dices[]) override;
+        small_straight();
+        ~small_straight();
+        void parse(game::roll::dice dices[5]) override;
     };
 }
 

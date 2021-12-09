@@ -11,6 +11,8 @@
 namespace game::figures {
     class chance : public game::figures::figure {
     public:
+        chance();
+        ~chance();
         void parse(game::roll::dice dices[]) override;
     };
 }

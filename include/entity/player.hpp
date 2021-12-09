@@ -14,8 +14,9 @@ namespace game::entity {
     class player {
     private:
         std::string _name;
-        std::vector<game::figures::figure> _figures;
+        std::vector<game::figures::figure *> _figures;
     public:
+        // TODO(Louis): Forme canonique
         player(std::string name);
         int get_score();
         virtual void turn();

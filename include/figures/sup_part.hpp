@@ -13,12 +13,13 @@ namespace game::figures {
     template<int value>
     class sup_part : public game::figures::figure {
     public:
-        sup_part<>();
+        sup_part();
+
         void parse(game::roll::dice dices[]) override;
     };
 
     template<int value>
-    sup_part<value>::sup_part() = default;
+    sup_part<value>::sup_part() {}
 
     template<int value>
     void sup_part<value>::parse(game::roll::dice dices[]) {

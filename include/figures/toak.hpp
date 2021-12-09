@@ -13,6 +13,8 @@ namespace game::figures {
         int _value1;
         int _value2;    
     public:
+        toak();
+        ~toak();
         void parse(game::roll::dice dices[]) override;
     };
 }

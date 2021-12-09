@@ -3,3 +3,15 @@
 //
 
 #include "../../include/figures/square.hpp"
+
+game::figures::square::square() {
+
+}
+
+game::figures::square::~square() {
+
+}
+
+void game::figures::square::parse(game::roll::dice *dices) {
+
+}

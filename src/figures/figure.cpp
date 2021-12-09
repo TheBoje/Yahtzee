@@ -3,3 +3,7 @@
 //
 
 #include "../../include/figures/figure.hpp"
+
+int game::figures::figure::get_points() const {
+    return _points;
+}
