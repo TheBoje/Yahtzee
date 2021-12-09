@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 include(FetchContent)
 FetchContent_Declare(
         googletest
-        # Specify the commit you depend on and update it regularly.
         URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
 )
 
@@ -16,12 +15,12 @@ FetchContent_MakeAvailable(googletest)
 
 # Grab every file fulfilling last arg regex
 # This makes `add_executable` less painful to read.
-file(GLOB_RECURSE SOURCES_INCLUDE RELATIVE ${CMAKE_SOURCE_DIR} "include/**/*.hpp")
-file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/**/*.cpp")
-file(GLOB_RECURSE SOURCES_TESTS RELATIVE ${CMAKE_SOURCE_DIR} "tests/**/*.cpp")
+file(GLOB_RECURSE SOURCES_INCLUDE "include/**/*.hpp")
+file(GLOB_RECURSE SOURCES "src/**/*.cpp")
+file(GLOB_RECURSE SOURCES_TESTS "tests/**/*.cpp")
 
-add_executable(main ${SOURCES_INCLUDE} ${SOURCES})
-add_executable(tests ${SOURCES_INCLUDE} ${SOURCES} ${SOURCES_TESTS})
+add_executable(main src/main.cpp src/game_manager.cpp ${SOURCES_INCLUDE} ${SOURCES})
+add_executable(tests tests/test_main.cpp ${SOURCES_TESTS} ${SOURCES_INCLUDE} ${SOURCES})
 
 enable_testing()
 
