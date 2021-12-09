@@ -10,7 +10,7 @@
 #include "dice.hpp"
 #include "../figures/constant.hpp"
 
-namespace yahtzee::roll {
+namespace game::roll {
     class roll {
         dice _dices[NB_DICE];
         bool _kept[NB_DICE];

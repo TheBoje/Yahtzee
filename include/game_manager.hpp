@@ -13,12 +13,12 @@
 namespace yahtzee {
     class game_manager {
     private:
-        std::vector<yahtzee::entity::player> _players;
-        yahtzee::difficulty::level * _level; // Is a pointer because it's an abstract class
-        yahtzee::roll::roll _roll;
+        std::vector<game::entity::player> _players;
+        game::difficulty::level * _level; // Is a pointer because it's an abstract class
+        game::roll::roll _roll;
 
     public:
-        game_manager(yahtzee::difficulty::level * level);
+        game_manager(game::difficulty::level * level);
         ~game_manager();
         bool turn();
     };

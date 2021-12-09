@@ -10,11 +10,11 @@
 
 #include "../figures/figure.hpp"
 
-namespace yahtzee::entity {
+namespace game::entity {
     class player {
     private:
         std::string _name;
-        std::vector<yahtzee::figures::figure> _figures;
+        std::vector<game::figures::figure> _figures;
     public:
         player(std::string name);
         int get_score();

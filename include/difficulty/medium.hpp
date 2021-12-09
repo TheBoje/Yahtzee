@@ -7,7 +7,7 @@
 
 #include "level.hpp"
 
-namespace yahtzee::difficulty {
+namespace game::difficulty {
     class medium : public level {
     public:
         void turn();

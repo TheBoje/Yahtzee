@@ -7,12 +7,12 @@
 
 #include "../roll/dice.hpp"
 
-namespace yahtzee::figures {
+namespace game::figures {
     class figure {
     protected:
         int _points = 0;
     public:
-        virtual void parse(yahtzee::roll::dice dices[]) = 0;
+        virtual void parse(game::roll::dice dices[]) = 0;
         int get_points() const;
         int operator+ (const figure & f) const;
     };

@@ -7,7 +7,7 @@
 
 class test_dice : public ::testing::Test {
 protected:
-    yahtzee::roll::dice _d;
+    game::roll::dice _d;
 };
 
 TEST_F(test_dice, get_value) {

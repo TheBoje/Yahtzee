@@ -8,12 +8,12 @@
 #include <vector>
 #include "../entity/player.hpp"
 
-namespace yahtzee::difficulty {
+namespace game::difficulty {
     class level {
     protected:
-        std::vector<yahtzee::entity::player> _players; // NOTE(Louis): Protected ?
+        std::vector<game::entity::player> _players; // NOTE(Louis): Protected ?
     public:
-        level(std::vector<yahtzee::entity::player> players); // TODO(Louis): Ca fait une copie du vecteur ou un passage par référence?
+        level(std::vector<game::entity::player> players); // TODO(Louis): Ca fait une copie du vecteur ou un passage par référence?
         virtual void turn() = 0;
     };
 }

@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-namespace yahtzee::roll {
+namespace game::roll {
     class dice {
         int _value;
 

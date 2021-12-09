@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-namespace yahtzee {
+namespace game {
     constexpr int NB_DICE = 5;
 
     const std::string DICE_TOP =                    "┌───────┐";

@@ -7,7 +7,7 @@
 
 #include "level.hpp"
 
-namespace yahtzee::difficulty {
+namespace game::difficulty {
     class impossible : public level {
     public:
         void turn();
