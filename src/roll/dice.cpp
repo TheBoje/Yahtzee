@@ -3,7 +3,7 @@
 //
 
 #include "../../include/roll/dice.hpp"
-#include "../../include/figures/constant.hpp"
+#include "../../include/constant.hpp"
 
 game::roll::dice::dice() : _value(6)
 {}
