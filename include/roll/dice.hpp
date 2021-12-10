@@ -23,12 +23,12 @@ namespace game::roll {
 
         int get_value() const;
 
-        std::ostream& operator<<(std::ostream& os);
+        friend std::ostream& operator<<(std::ostream& os, const dice& d);
 
         /**
          * @return the sum of the dices value
          */
-        int operator+(const dice& d);
+        int operator+(const dice& d) const;
 
         int operator+(int val) const;
     };

@@ -2,8 +2,10 @@
 // Created by Louis Leenart on 03/12/2021.
 //
 #include <iostream>
+#include "../include/roll/dice.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    game::roll::dice dice;
+    std::cout << dice;
     return EXIT_SUCCESS;
 }
