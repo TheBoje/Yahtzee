@@ -22,9 +22,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 file(GLOB_RECURSE SOURCES_INCLUDE "include/**/*.hpp")
 file(GLOB_RECURSE SOURCES "src/**/*.cpp")
 file(GLOB_RECURSE SOURCES_TESTS "tests/**/*.cpp")
+file(GLOB_RECURSE MOCKS "tests/mock/*.hpp")
 
 add_executable(main src/main.cpp src/game_manager.cpp ${SOURCES_INCLUDE} ${SOURCES})
-add_executable(tests tests/test_main.cpp ${SOURCES_INCLUDE} ${SOURCES} ${SOURCES_TESTS})
+add_executable(tests tests/test_main.cpp ${SOURCES_INCLUDE} ${SOURCES} ${SOURCES_TESTS} ${MOCKS})
 include_directories(src include)
 enable_testing()
 
