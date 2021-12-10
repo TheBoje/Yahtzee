@@ -3,6 +3,7 @@
 //
 
 #include "../../include/figures/chance.hpp"
+#include "../include/constant.hpp"
 
 game::figures::chance::chance() {
 
@@ -13,7 +14,9 @@ game::figures::chance::~chance() {
 }
 
 void game::figures::chance::parse(game::roll::dice *dices) {
-
+    for (int i = 0; i < game::NB_DICE; i++) {
+       _points = dices[i] + _points;
+    }
 }
 
 game::figures::chance::chance(const game::figures::chance &c) {

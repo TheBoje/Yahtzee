@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "gtest/gtest.h"
-#include "../cmake-build-debug/_deps/googletest-src/googlemock/include/gmock/gmock.h"
+#include "gmock/gmock.h"
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleMock(&argc, argv);
