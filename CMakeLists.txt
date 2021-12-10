@@ -29,5 +29,6 @@ include_directories(src include)
 enable_testing()
 
 target_link_libraries(tests gtest_main)
+target_link_libraries(tests gmock_main)
 add_test(NAME tests COMMAND tests)
 
