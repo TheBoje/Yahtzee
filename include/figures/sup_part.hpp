@@ -38,7 +38,7 @@ namespace game::figures {
     }
 
     template<int value>
-    sup_part<value>::~sup_part() {};
+    sup_part<value>::~sup_part() {}
 }
 
 #endif //PROJET_COO_SUP_PART_HPP
