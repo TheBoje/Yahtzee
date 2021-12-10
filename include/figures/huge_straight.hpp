@@ -13,6 +13,7 @@ namespace game::figures {
         int _start_val;
     public:
         huge_straight();
+        huge_straight(const figures::huge_straight & hs);
         ~huge_straight();
         void parse(game::roll::dice dices[5]) override;
     };

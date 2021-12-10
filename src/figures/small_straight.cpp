@@ -11,3 +11,8 @@ game::figures::small_straight::~small_straight() { }
 void game::figures::small_straight::parse(game::roll::dice dices[5]) {
 
 }
+
+game::figures::small_straight::small_straight(const game::figures::small_straight &ss) {
+    _points = ss._points;
+    _start_val = ss._start_val;
+}

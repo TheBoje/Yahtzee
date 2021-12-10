@@ -16,8 +16,10 @@ namespace game::entity {
         std::string _name;
         std::vector<game::figures::figure *> _figures;
     public:
-        // TODO(Louis): Forme canonique
         player(std::string name);
+        player(const player & p);
+        ~player();
+        player & operator= (const player & p);
         int get_score();
         virtual void turn();
     };

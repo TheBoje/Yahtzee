@@ -13,6 +13,7 @@ namespace game::figures {
         int _start_val;
     public:
         small_straight();
+        small_straight(const figures::small_straight & ss);
         ~small_straight();
         void parse(game::roll::dice dices[5]) override;
     };

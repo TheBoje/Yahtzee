@@ -13,6 +13,7 @@ namespace game::figures {
         int _value;
     public:
         square();
+        square(const figures::square & s);
         ~square();
         void parse(game::roll::dice dices[]) override;
     };

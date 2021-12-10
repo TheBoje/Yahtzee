@@ -13,6 +13,7 @@ namespace game::figures {
         int _value;
     public:
         yahtzee();
+        yahtzee(const figures::yahtzee & y);
         ~yahtzee();
         void parse(game::roll::dice dices[]) override;
     };

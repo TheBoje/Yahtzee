@@ -14,6 +14,8 @@ namespace game::figures {
     class sup_part : public game::figures::figure {
     public:
         sup_part();
+        sup_part(const sup_part<value> & sp);
+        ~sup_part() override;
 
         void parse(game::roll::dice dices[]) override;
     };
@@ -29,6 +31,14 @@ namespace game::figures {
             }
         }
     }
+
+    template<int value>
+    sup_part<value>::sup_part(const sup_part<value> & sp) {
+        _points = sp._points;
+    }
+
+    template<int value>
+    sup_part<value>::~sup_part() {}
 }
 
 #endif //PROJET_COO_SUP_PART_HPP

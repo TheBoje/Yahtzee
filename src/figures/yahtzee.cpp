@@ -15,3 +15,8 @@ game::figures::yahtzee::~yahtzee() {
 game::figures::yahtzee::yahtzee() {
 
 }
+
+game::figures::yahtzee::yahtzee(const game::figures::yahtzee &y) {
+    _points = y._points;
+    _value = y._value;
+}
