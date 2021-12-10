@@ -12,7 +12,9 @@ namespace game::figures {
     class chance : public game::figures::figure {
     public:
         chance();
+        chance(const figures::chance & c);
         ~chance();
+
         void parse(game::roll::dice dices[]) override;
     };
 }

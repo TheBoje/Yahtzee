@@ -12,6 +12,7 @@ namespace game::figures {
     protected:
         int _points = 0;
     public:
+        virtual ~figure() = default;
         virtual void parse(game::roll::dice dices[]) = 0;
         int get_points() const;
         //int operator+ (const figure & f) const;

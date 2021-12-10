@@ -15,3 +15,7 @@ game::figures::full::~full() {
 void game::figures::full::parse(game::roll::dice *dices) {
 
 }
+
+game::figures::full::full(const game::figures::full &f) {
+    _points = f._points;
+}

@@ -14,6 +14,7 @@ namespace game::figures {
         int _value2;    
     public:
         toak();
+        toak(const figures::toak & t);
         ~toak();
         void parse(game::roll::dice dices[]) override;
     };

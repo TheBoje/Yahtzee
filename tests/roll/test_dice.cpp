@@ -3,6 +3,7 @@
 //
 
 #include "gtest/gtest.h"
+#include "gmock/gmock.h"
 #include "../../include/roll/dice.hpp"
 
 class test_dice : public ::testing::Test {

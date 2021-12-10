@@ -8,7 +8,7 @@
 #include <iostream>
 
 #include "dice.hpp"
-#include "../figures/constant.hpp"
+#include "constant.hpp"
 
 namespace game::roll {
     class roll {

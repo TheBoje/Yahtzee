@@ -15,19 +15,20 @@
 
 game::entity::player::player(std::string name) : _name(std::move(name)) {
     // Fill _figures with empty figures!
-    _figures.push_back(new game::figures::sup_part<1>());
-    _figures.push_back(new game::figures::sup_part<2>());
-    _figures.push_back(new game::figures::sup_part<3>());
-    _figures.push_back(new game::figures::sup_part<4>());
-    _figures.push_back(new game::figures::sup_part<5>());
-    _figures.push_back(new game::figures::sup_part<6>());
-    _figures.push_back(new game::figures::toak());
-    _figures.push_back(new game::figures::small_straight());
-    _figures.push_back(new game::figures::huge_straight());
-    _figures.push_back(new game::figures::full());
-    _figures.push_back(new game::figures::square());
-    _figures.push_back(new game::figures::yahtzee());
-    _figures.push_back(new game::figures::chance());
+    _figures.reserve(13);
+    _figures.push_back(new figures::sup_part<1>());
+    _figures.push_back(new figures::sup_part<2>());
+    _figures.push_back(new figures::sup_part<3>());
+    _figures.push_back(new figures::sup_part<4>());
+    _figures.push_back(new figures::sup_part<5>());
+    _figures.push_back(new figures::sup_part<6>());
+    _figures.push_back(new figures::toak());
+    _figures.push_back(new figures::small_straight());
+    _figures.push_back(new figures::huge_straight());
+    _figures.push_back(new figures::full());
+    _figures.push_back(new figures::square());
+    _figures.push_back(new figures::yahtzee());
+    _figures.push_back(new figures::chance());
 }
 
 int game::entity::player::get_score() {
@@ -41,4 +42,53 @@ int game::entity::player::get_score() {
 void game::entity::player::turn() {
     // TODO(Louis): implement me!
     std::cout << "TODO player.turn()" << std::endl;
+}
+
+game::entity::player::player(const game::entity::player &p) {
+    _figures.reserve(13);
+    // I don't like how ugly this is :(
+    _figures.push_back(new figures::sup_part<1>(*(figures::sup_part<1> *)p._figures.at(0)));
+    _figures.push_back(new figures::sup_part<2>(*(figures::sup_part<2> *) p._figures.at(1)));
+    _figures.push_back(new figures::sup_part<3>(*(figures::sup_part<3> *) p._figures.at(2)));
+    _figures.push_back(new figures::sup_part<4>(*(figures::sup_part<4> *) p._figures.at(3)));
+    _figures.push_back(new figures::sup_part<5>(*(figures::sup_part<5> *) p._figures.at(4)));
+    _figures.push_back(new figures::sup_part<6>(*(figures::sup_part<6> *) p._figures.at(5)));
+    _figures.push_back(new figures::toak(*(figures::toak *) p._figures.at(6)));
+    _figures.push_back(new figures::small_straight(*(figures::small_straight *) p._figures.at(7)));
+    _figures.push_back(new figures::huge_straight(*(figures::huge_straight *) p._figures.at(8)));
+    _figures.push_back(new figures::full(*(figures::full *) p._figures.at(9)));
+    _figures.push_back(new figures::square(*(figures::square *) p._figures.at(10)));
+    _figures.push_back(new figures::yahtzee(*(figures::yahtzee *) p._figures.at(11)));
+    _figures.push_back(new figures::chance(*(figures::chance *) p._figures.at(12)));
+}
+
+game::entity::player::~player() {
+    for (const figures::figure * f : _figures) {
+        delete f;
+    }
+}
+
+game::entity::player &game::entity::player::operator=(const game::entity::player &p) {
+    if (this == &p) {
+        return *this;
+    }
+
+    for (figures::figure * f : _figures) {
+        delete f;
+    }
+
+    _figures.push_back(new figures::sup_part<1>(*(figures::sup_part<1> *)p._figures.at(0)));
+    _figures.push_back(new figures::sup_part<2>(*(figures::sup_part<2> *) p._figures.at(1)));
+    _figures.push_back(new figures::sup_part<3>(*(figures::sup_part<3> *) p._figures.at(2)));
+    _figures.push_back(new figures::sup_part<4>(*(figures::sup_part<4> *) p._figures.at(3)));
+    _figures.push_back(new figures::sup_part<5>(*(figures::sup_part<5> *) p._figures.at(4)));
+    _figures.push_back(new figures::sup_part<6>(*(figures::sup_part<6> *) p._figures.at(5)));
+    _figures.push_back(new figures::toak(*(figures::toak *) p._figures.at(6)));
+    _figures.push_back(new figures::small_straight(*(figures::small_straight *) p._figures.at(7)));
+    _figures.push_back(new figures::huge_straight(*(figures::huge_straight *) p._figures.at(8)));
+    _figures.push_back(new figures::full(*(figures::full *) p._figures.at(9)));
+    _figures.push_back(new figures::square(*(figures::square *) p._figures.at(10)));
+    _figures.push_back(new figures::yahtzee(*(figures::yahtzee *) p._figures.at(11)));
+    _figures.push_back(new figures::chance(*(figures::chance *) p._figures.at(12)));
+    return *this;
 }
