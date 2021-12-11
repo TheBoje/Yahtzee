@@ -8,7 +8,7 @@ game::figures::toak::toak() {
 
 }
 
-void game::figures::toak::parse(game::roll::dice *dices) {
+void game::figures::toak::parse(game::roll::dice dices[NB_DICE]) {
 
 }
 

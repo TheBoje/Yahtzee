@@ -11,8 +11,8 @@
 namespace game::figures {
     class full : public game::figures::figure {
     private:
-        int _value_pair{};
-        int _value_toak{};
+        int _value_pair;
+        int _value_toak;
         static const int POINTS_SUCCESS = 25;
     public:
         full();
