@@ -7,3 +7,7 @@
 int game::figures::figure::get_points() const {
     return _points;
 }
+
+int game::figures::operator+=(int rh, const game::figures::figure & lh) {
+    return rh + lh.get_points();
+}

@@ -19,7 +19,7 @@ namespace game::entity {
         player(std::string name);
         player(const player & p);
         ~player();
-        player & operator= (const player & p);
+        player& operator=(const player & p);
         int get_score();
         virtual void turn();
     };

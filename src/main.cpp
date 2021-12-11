@@ -11,8 +11,8 @@ int main() {
     //std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
-    //game::roll::dice dice;
-    //std::cout << dice;
+    game::roll::dice dice;
+    std::cout << dice;
 
     return EXIT_SUCCESS;
 }

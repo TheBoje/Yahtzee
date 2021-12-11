@@ -15,6 +15,11 @@ namespace game::figures {
     public:
         square();
         square(const figures::square & s);
+
+        /* Accept only a square, 4 times the same dice.
+         * _points is set to the sum of the dices values
+         * _value is set to the dice value of the square
+         */
         void parse(game::roll::dice dices[NB_DICE]) override;
     };
 }

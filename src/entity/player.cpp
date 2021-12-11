@@ -3,7 +3,6 @@
 //
 
 #include "../../include/entity/player.hpp"
-#include "../../include/figures/figure.hpp"
 #include "../../include/figures/sup_part.hpp"
 #include "../../include/figures/toak.hpp"
 #include "../../include/figures/small_straight.hpp"
@@ -33,15 +32,28 @@ game::entity::player::player(std::string name) : _name(std::move(name)) {
 
 int game::entity::player::get_score() {
     int sum = 0;
-    for (const game::figures::figure * f : _figures) {
-        sum += f->get_points(); // overload op += ?
+    int sup_part_sum = 0;
+
+    for (int i = 0; i < 6; i++) {
+        sup_part_sum += *_figures.at(i);
     }
+
+    for (int i = 6; i < (int)_figures.size(); i++) {
+        sum += *_figures.at(i);
+    }
+
+    sum += sup_part_sum;
+
+    if (sup_part_sum >= BONUS_REQUIRED) {
+        sum += BONUS_VALUE;
+    }
+
     return sum;
 }
 
 void game::entity::player::turn() {
-    // TODO(Louis): implement me!
-    std::cout << "TODO player.turn()" << std::endl;
+    // TODO(Louis): implement player.turn()
+    std::cout << _name << " : TODO player.turn()" << std::endl;
 }
 
 game::entity::player::player(const game::entity::player &p) {

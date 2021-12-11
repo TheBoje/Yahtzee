@@ -23,8 +23,6 @@ namespace game::roll {
 
         int get_value() const;
 
-        friend std::ostream& operator<<(std::ostream& os, const dice& d);
-
         /**
          * @return the sum of the dices value
          */
@@ -34,6 +32,8 @@ namespace game::roll {
 
         bool operator<(const dice & d) const;
     };
+
+    std::ostream& operator<<(std::ostream& os, const dice& d);
 }
 
 #endif //PROJET_COO_DICE_HPP

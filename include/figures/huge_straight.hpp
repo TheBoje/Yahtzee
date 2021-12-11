@@ -16,6 +16,11 @@ namespace game::figures {
     public:
         huge_straight();
         huge_straight(const figures::huge_straight & hs);
+
+        /* Accept only a straight of 5 dices (1-2-3-4-5 or 2-3-4-5-6).
+         * _points is set to POINTS_SUCCESS if parsing is successful
+         * _start_val is set to the first dice value of the straight
+         */
         void parse(game::roll::dice dices[NB_DICE]) override;
     };
 }
