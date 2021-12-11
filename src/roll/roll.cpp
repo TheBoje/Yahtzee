@@ -3,3 +3,15 @@
 //
 
 #include "../../include/roll/roll.hpp"
+
+game::roll::roll::roll() {
+
+}
+
+void game::roll::roll::update() {
+
+}
+
+void game::roll::roll::reset() {
+
+}

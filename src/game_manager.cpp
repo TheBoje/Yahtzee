@@ -3,3 +3,27 @@
 //
 
 #include "../include/game_manager.hpp"
+
+game::game_manager::game_manager(game::difficulty::level *level, int player_count) : _level(level) {
+    _players.reserve(player_count);
+    for (int i = 0; i < player_count; i++) {
+        std::cout << "Enter the name of player number " << i << " : ";
+        std::string name;
+        std::cin >> name; // Note(Louis): std::cin stops at whitespaces, \n and \t, maybe add checks ? Or maybe use another method (getline()?)
+        _players.push_back(game::entity::player(name));
+    }
+}
+
+
+// Return true if the game is finished
+bool game::game_manager::turn() {
+    // The game is finished
+    if (turn_count >= 13) {
+        return false;
+    }
+
+    _level->turn();
+
+    turn_count++;
+    return true;
+}

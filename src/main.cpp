@@ -4,15 +4,15 @@
 #include <iostream>
 #include "../include/roll/dice.hpp"
 #include "../include/entity/player.hpp"
+#include "../include/game_manager.hpp"
+#include "difficulty/easy.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    game::entity::player p("Louis");
+    //std::cout << "Hello, World!" << std::endl;
+    //game::entity::player p("Louis");
 
-    game::roll::dice dice;
-    std::cout << dice;
-
-    p.turn();
+    //game::roll::dice dice;
+    //std::cout << dice;
 
     return EXIT_SUCCESS;
 }

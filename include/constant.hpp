@@ -8,6 +8,7 @@
 #include <iostream>
 
 namespace game {
+    // NOTE: Change this value and MANY things will break.
     constexpr int NB_DICE = 5;
 
     const std::string DICE_TOP =                    "┌───────┐";

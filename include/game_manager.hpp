@@ -10,16 +10,16 @@
 #include "entity/player.hpp"
 #include "roll/roll.hpp"
 
-namespace yahtzee {
+namespace game {
     class game_manager {
     private:
         std::vector<game::entity::player> _players;
         game::difficulty::level * _level; // Is a pointer because it's an abstract class
         game::roll::roll _roll;
+        int turn_count = 0;
 
     public:
-        game_manager(game::difficulty::level * level);
-        ~game_manager();
+        game_manager(game::difficulty::level * level, int player_count);
         bool turn();
     };
 }
