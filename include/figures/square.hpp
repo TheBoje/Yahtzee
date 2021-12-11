@@ -7,6 +7,7 @@
 
 #include "figure.hpp"
 #include "../roll/dice.hpp"
+#include "../constant.hpp"
 
 namespace game::figures {
     class square : public game::figures::figure {
@@ -14,8 +15,7 @@ namespace game::figures {
     public:
         square();
         square(const figures::square & s);
-        ~square();
-        void parse(game::roll::dice dices[]) override;
+        void parse(game::roll::dice dices[NB_DICE]) override;
     };
 }
 

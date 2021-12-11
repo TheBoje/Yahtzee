@@ -7,16 +7,15 @@
 
 #include "figure.hpp"
 #include "../roll/dice.hpp"
+#include "../constant.hpp"
 
 namespace game::figures {
     class toak : public game::figures::figure {
-        int _value1;
-        int _value2;    
+        int _value;
     public:
         toak();
         toak(const figures::toak & t);
-        ~toak();
-        void parse(game::roll::dice dices[]) override;
+        void parse(game::roll::dice dices[NB_DICE]) override;
     };
 }
 

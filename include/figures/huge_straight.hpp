@@ -7,15 +7,16 @@
 
 #include "figure.hpp"
 #include "../roll/dice.hpp"
+#include "../constant.hpp"
 
 namespace game::figures {
     class huge_straight : public game::figures::figure {
         int _start_val;
+        static const int POINTS_SUCCESS = 40;
     public:
         huge_straight();
         huge_straight(const figures::huge_straight & hs);
-        ~huge_straight();
-        void parse(game::roll::dice dices[5]) override;
+        void parse(game::roll::dice dices[NB_DICE]) override;
     };
 }
 

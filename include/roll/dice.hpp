@@ -31,6 +31,8 @@ namespace game::roll {
         int operator+(const dice& d) const;
 
         int operator+(int val) const;
+
+        bool operator<(const dice & d) const;
     };
 }
 

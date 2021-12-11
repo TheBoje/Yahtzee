@@ -6,14 +6,18 @@
 #define PROJET_COO_FULL_HPP
 
 #include "figure.hpp"
+#include "../constant.hpp"
 
 namespace game::figures {
     class full : public game::figures::figure {
+    private:
+        int _value_pair{};
+        int _value_toak{};
+        static const int POINTS_SUCCESS = 25;
     public:
         full();
         full(const figures::full & f);
-        ~full();
-        void parse(game::roll::dice dices[]) override;
+        void parse(game::roll::dice dices[NB_DICE]) override;
     };
 }
 

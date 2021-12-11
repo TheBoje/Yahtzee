@@ -35,3 +35,7 @@ std::ostream &game::roll::operator<<(std::ostream &os, const dice& d) {
 
     return os;
 }
+
+bool game::roll::dice::operator<(const game::roll::dice &d) const {
+    return (_value < d._value);
+}
