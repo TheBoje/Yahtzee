@@ -9,13 +9,14 @@ game::figures::small_straight::small_straight() { }
 
 
 void game::figures::small_straight::parse(game::roll::dice dices[NB_DICE]) {
+    // Searching for a straight of 4 dices, spaced by one (dices[n] = dices[n + 1] - 1)
     std::sort(&dices[0], &dices[NB_DICE - 1]);
     int wildcard = 0;
     for (int i = 0; i < NB_DICE - 1; i++) {
         /* For a small straight of NB_DICE - 1 dices, it means
          * that we can find only one wildcard (d[i] = d[i+1]
          * or d[i] < d[i+1] - 1). If we find more, this is not
-         * a small_straight
+         * a small_straight!
          * */
         if (dices[i].get_value() != dices[i].get_value() - 1){
             wildcard += 1;

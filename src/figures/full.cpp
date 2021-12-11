@@ -9,11 +9,17 @@
 game::figures::full::full() : _value_pair(0), _value_toak(0) { }
 
 void game::figures::full::parse(game::roll::dice dices[NB_DICE]) {
+    /* Searching for a pair AND toak.
+     * After sorting the dice list, if there is a pair and a toak,
+     * first and last elem of the list are part of the pair and the
+     * toak indepedently.
+     */
     std::sort(&dices[0], &dices[NB_DICE - 1]);
+
     int first_val = dices[0].get_value();
     int last_val = dices[NB_DICE - 1].get_value();
-    int first_count = 1;
-    int last_count = 1;
+    int first_count = 1, last_count = 1;
+
     for (int i = 1; i < NB_DICE - 1; i++) {
         if (dices[i].get_value() == first_val) {
             first_count++;

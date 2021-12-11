@@ -7,6 +7,7 @@
 game::figures::yahtzee::yahtzee() : _value(0) { }
 
 void game::figures::yahtzee::parse(game::roll::dice dices[NB_DICE]) {
+    // Searching for 5 times the same dice value.
     int value = dices[0].get_value();
     int count = 1;
     for (int i = 1; i < NB_DICE; i++) {
@@ -15,11 +16,9 @@ void game::figures::yahtzee::parse(game::roll::dice dices[NB_DICE]) {
         }
     }
 
-    if (count == 5) { // NOTE(Louis): is the yahtzee 5 times the same dice, or NB_DICE times the same dice ?
+    if (count == 5) {
         _points = POINTS_SUCCESS;
         _value = value;
-    } else {
-        _points = 0;
     }
 }
 

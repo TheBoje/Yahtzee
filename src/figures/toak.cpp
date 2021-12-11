@@ -10,6 +10,7 @@ game::figures::toak::toak() : _value(0) {
 }
 
 void game::figures::toak::parse(game::roll::dice dices[NB_DICE]) {
+    // Searching for 3 times the same dice value.
     std::sort(&dices[0], &dices[NB_DICE - 1]);
 
     int max_count = 1;
@@ -34,14 +35,13 @@ void game::figures::toak::parse(game::roll::dice dices[NB_DICE]) {
         res = dices[NB_DICE - 1].get_value();
     }
 
+
     if (max_count >= 3) {
         _points = 0;
         for (int i = 0; i < NB_DICE; i++) {
             _points = dices[i] + _points;
         }
         _value = res;
-    } else {
-        _points = 0;
     }
 }
 

@@ -9,6 +9,7 @@
 game::figures::huge_straight::huge_straight() : _start_val(0) { }
 
 void game::figures::huge_straight::parse(game::roll::dice dices[NB_DICE]) {
+    // Searching for a straight of 5 dices, spaced by one (dices[n] = dices[n + 1] - 1)
     std::sort(&dices[0], &dices[NB_DICE - 1]);
     bool is_valid = true;
 
@@ -18,6 +19,7 @@ void game::figures::huge_straight::parse(game::roll::dice dices[NB_DICE]) {
             break;
         }
     }
+
     if (is_valid) {
         _points = POINTS_SUCCESS;
         _start_val = dices[0].get_value();
