@@ -7,7 +7,7 @@
 #include "../include/entity/player.hpp"
 
 int main() {
-    //std::cout << "Hello, World!" << std::endl;
+    std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
     game::roll::roll roll;

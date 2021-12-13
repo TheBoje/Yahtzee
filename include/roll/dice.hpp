@@ -11,12 +11,10 @@
 namespace game::roll {
     class dice {
         int _value;
-        std::uniform_int_distribution<int> _distrib;
-        std::mt19937 _gen;
-        std::random_device _rd;
     public:
 
         dice();
+        dice(int rand_offset);
         dice(const dice& src);
 
         /**

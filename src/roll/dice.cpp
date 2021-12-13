@@ -5,15 +5,23 @@
 #include "../../include/roll/dice.hpp"
 #include "../../include/constant.hpp"
 
-game::roll::dice::dice() : _value(0), _distrib(MIN_VALUE, MAX_VALUE), _gen(_rd())
-{}
+game::roll::dice::dice() : _value(0)
+{
+    std::srand(time(nullptr));
+}
 
+game::roll::dice::dice(int rand_offset) : _value(0)
+{
+    // TODO solution temporaire car le random_device bug
+    std::srand(time(nullptr) + rand_offset);
+}
 
 game::roll::dice::dice(const game::roll::dice &src) : _value(src._value)
 {}
 
 void game::roll::dice::roll() {
-    _value = _distrib(_gen);
+    //_value = _distrib(_gen);
+    _value = rand() % MAX_VALUE + MIN_VALUE;
 }
 
 int game::roll::dice::get_value() const {
