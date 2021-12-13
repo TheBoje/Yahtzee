@@ -9,7 +9,6 @@ game::roll::roll::roll()
     for(int i = 0; i < NB_DICE; i++)
     {
         _dices[i] = new dice(i);
-        _kept[i] = false;
     }
 }
 
@@ -26,7 +25,6 @@ game::roll::roll::roll(const roll &src)
     for(int i = 0; i < NB_DICE; i++)
     {
         _dices[i] = new dice(*(src._dices[i]));
-        _kept[i] = src._kept[i];
     }
 }
 
@@ -38,7 +36,6 @@ game::roll::roll &game::roll::roll::operator=(const roll &src)
         {
             delete _dices[i];
             _dices[i] = new dice(*(src._dices[i]));
-            _kept[i] = src._kept[i];
         }
     }
 
@@ -48,7 +45,7 @@ game::roll::roll &game::roll::roll::operator=(const roll &src)
 void game::roll::roll::update() {
     for(int i = 0; i < NB_DICE; i++)
     {
-        if(!_kept[i])
+        if(!_dices[i]->get_is_kept())
         {
             _dices[i]->roll();
         }
@@ -58,7 +55,7 @@ void game::roll::roll::update() {
 void game::roll::roll::reset() {
     for(int i = 0; i < NB_DICE; i++)
     {
-        _kept[i] = false;
+        _dices[i]->roll();
     }
 }
 
@@ -67,17 +64,17 @@ std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
 {
     for(int i = 0; i < NB_DICE; i++)
     {
-        if(!r._kept[i])
+        if(!r._dices[i]->get_is_kept())
         {
             os << *(r._dices[i]) << std::endl;
         }
     }
 
-    os << "-------------";
+    os << "-------------" << std::endl;
 
     for(int i = 0; i < NB_DICE; i++)
     {
-        if(r._kept[i])
+        if(r._dices[i]->get_is_kept())
         {
             os << *(r._dices[i]) << std::endl;
         }

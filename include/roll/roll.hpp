@@ -13,7 +13,6 @@
 namespace game::roll {
     class roll {
         dice* _dices[NB_DICE];
-        bool _kept[NB_DICE];
 
     public:
         roll();

@@ -11,6 +11,7 @@
 namespace game::roll {
     class dice {
         int _value;
+        bool _is_kept;
     public:
 
         dice();
@@ -24,6 +25,9 @@ namespace game::roll {
         void roll();
 
         int get_value() const;
+        bool get_is_kept() const;
+
+        void keep();
 
         /**
          * @return the sum of the dices value
