@@ -3,16 +3,16 @@
 //
 #include <iostream>
 #include "../include/roll/dice.hpp"
+#include "../include/roll/roll.hpp"
 #include "../include/entity/player.hpp"
-#include "../include/game_manager.hpp"
-#include "difficulty/easy.hpp"
 
 int main() {
     //std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
-    game::roll::dice dice;
-    std::cout << dice;
+    game::roll::roll roll;
+    roll.update();
+    std::cout << roll << std::endl;
 
     return EXIT_SUCCESS;
 }

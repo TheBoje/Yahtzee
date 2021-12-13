@@ -10,6 +10,8 @@
 namespace game {
     // NOTE: Change this value and MANY things will break.
     constexpr int NB_DICE = 5;
+    constexpr int MAX_VALUE = 6;
+    constexpr int MIN_VALUE = 1;
     constexpr int BONUS_REQUIRED = 63;
     constexpr int BONUS_VALUE = 63;
 

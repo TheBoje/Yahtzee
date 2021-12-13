@@ -12,11 +12,15 @@
 
 namespace game::roll {
     class roll {
-        dice _dices[NB_DICE];
+        dice* _dices[NB_DICE];
         bool _kept[NB_DICE];
 
     public:
         roll();
+        roll(const roll& src);
+        ~roll();
+
+        roll& operator=(const roll& src);
 
         /**
          * Roll all the non-kept dices
@@ -27,6 +31,9 @@ namespace game::roll {
          * Reset the kept array by setting all the values to false
          */
         void reset();
+
+        friend std::ostream& operator<<(std::ostream& os, const roll& r);
+
     };
 }
 

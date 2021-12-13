@@ -5,11 +5,15 @@
 #include "../../include/roll/dice.hpp"
 #include "../../include/constant.hpp"
 
-game::roll::dice::dice() : _value(6)
+game::roll::dice::dice() : _value(0), _distrib(MIN_VALUE, MAX_VALUE), _gen(_rd())
+{}
+
+
+game::roll::dice::dice(const game::roll::dice &src) : _value(src._value)
 {}
 
 void game::roll::dice::roll() {
-
+    _value = _distrib(_gen);
 }
 
 int game::roll::dice::get_value() const {
@@ -39,3 +43,4 @@ std::ostream &game::roll::operator<<(std::ostream &os, const dice& d) {
 bool game::roll::dice::operator<(const game::roll::dice &d) const {
     return (_value < d._value);
 }
+
