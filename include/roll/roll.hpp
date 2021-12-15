@@ -31,6 +31,8 @@ namespace game::roll {
          */
         void reset();
 
+        game::roll::dice * get_dices();
+
         friend std::ostream& operator<<(std::ostream& os, const roll& r);
 
     };

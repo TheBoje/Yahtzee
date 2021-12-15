@@ -22,7 +22,7 @@ bool game::game_manager::turn() {
         return false;
     }
 
-    _level->turn();
+    _level->turn(_roll, _players);
 
     turn_count++;
     return true;

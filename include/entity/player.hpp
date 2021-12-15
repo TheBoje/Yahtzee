@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 
+#include "../roll/roll.hpp"
 #include "../figures/figure.hpp"
 
 namespace game::entity {
@@ -19,9 +20,12 @@ namespace game::entity {
         player(std::string name);
         player(const player & p);
         ~player();
+
+        void add_figure(int index, roll::roll roll) const;
+
         player& operator=(const player & p);
         int get_score();
-        virtual void turn();
+        virtual void turn(const game::roll::roll& roll) const;
     };
 }
 

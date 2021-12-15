@@ -51,7 +51,7 @@ int game::entity::player::get_score() {
     return sum;
 }
 
-void game::entity::player::turn() {
+void game::entity::player::turn(const game::roll::roll& roll) const {
     // TODO(Louis): implement player.turn()
     std::cout << _name << " : TODO player.turn()" << std::endl;
 }
@@ -103,4 +103,9 @@ game::entity::player &game::entity::player::operator=(const game::entity::player
     _figures.push_back(new figures::yahtzee(*(figures::yahtzee *) p._figures.at(11)));
     _figures.push_back(new figures::chance(*(figures::chance *) p._figures.at(12)));
     return *this;
+}
+
+void game::entity::player::add_figure(int index, roll::roll roll) const {
+    if(index >= 0 && index < _figures.size())
+        _figures[index]->parse(roll.get_dices());
 }

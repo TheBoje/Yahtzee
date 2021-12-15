@@ -6,11 +6,13 @@
 #define PROJET_COO_EASY_HPP
 
 #include "level.hpp"
+#include "../include/roll/roll.hpp"
+
 
 namespace game::difficulty {
     class easy : public level {
     public:
-        void turn();
+        void turn(const game::roll::roll& r, const std::vector<game::entity::player>& players);
     };
 }
 

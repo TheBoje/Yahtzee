@@ -10,7 +10,7 @@
 namespace game::entity {
     class ai : public player {
     public:
-        void turn() override;
+        void turn(const game::roll::roll& roll) const override;
     };
 }
 
