@@ -80,6 +80,7 @@ std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
         }
         os << std::endl;
     }
+    return os;
 }
 
 game::roll::dice *game::roll::roll::get_dices() {
