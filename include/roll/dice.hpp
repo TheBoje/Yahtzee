@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <random>
+#include <vector>
 
 namespace game::roll {
     class dice {
@@ -28,6 +29,8 @@ namespace game::roll {
         bool get_is_kept() const;
 
         void keep();
+
+        std::vector<std::string> get_print_vector();
 
         /**
          * @return the sum of the dices value

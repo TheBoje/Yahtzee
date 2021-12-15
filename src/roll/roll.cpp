@@ -62,22 +62,23 @@ void game::roll::roll::reset() {
 // TODO : voir s'il n'y a pas un meilleur moyen d'afficher sans parcourir le tableau 2 fois
 std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
 {
-    for(int i = 0; i < NB_DICE; i++)
-    {
-        if(!r._dices[i]->get_is_kept())
-        {
-            os << *(r._dices[i]) << std::endl;
-        }
-    }
+    std::vector<std::vector<std::string>> dices_printer;
+    dices_printer.reserve(NB_DICE);
 
-    os << "-------------" << std::endl;
-
+    // We need to get each lines of the dice in order two print all the dices in a row
     for(int i = 0; i < NB_DICE; i++)
+        dices_printer.push_back(r._dices[i]->get_print_vector());
+
+
+
+    for(int i = 0; i < dices_printer.size(); i++)
     {
-        if(r._dices[i]->get_is_kept())
+        for(int j = 0; j < dices_printer[i].size(); j++)
         {
-            os << *(r._dices[i]) << std::endl;
+            // We invert i and j because we want to print all the first dice line in the same line
+            os << dices_printer[j][i] << " ";
         }
+        os << std::endl;
     }
 }
 

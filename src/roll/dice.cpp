@@ -60,3 +60,16 @@ void game::roll::dice::keep() {
     _is_kept = true;
 }
 
+std::vector<std::string> game::roll::dice::get_print_vector() {
+    std::vector<std::string> printable;
+    printable.reserve(5);
+
+    printable.push_back(DICE_TOP);
+    printable.push_back((_value > 3) ? DICE_TWO_IN_ROW : ((_value > 1) ? DICE_ONE_IN_ROW_LEFT : DICE_BLANK));
+    printable.push_back((_value == 6 ? DICE_TWO_IN_ROW : (_value % 2 == 0) ? DICE_BLANK : DICE_ONE_IN_ROW_CENTERED));
+    printable.push_back((_value > 3) ? DICE_TWO_IN_ROW : ((_value > 1) ? DICE_ONE_IN_ROW_RIGHT : DICE_BLANK));
+    printable.push_back(DICE_BOTTOM);
+
+    return printable;
+}
+
