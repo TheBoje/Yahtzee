@@ -7,7 +7,7 @@
 void game::difficulty::easy::turn(const game::roll::roll &r, const std::vector<game::entity::player> &players) {
     for(int i = 0; i < players.size(); i++)
     {
-        players[i].turn(r);
+        players[i].turn((roll::roll &)(r));
 
         int figure;
         std::cin >> figure;

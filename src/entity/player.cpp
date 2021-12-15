@@ -51,7 +51,9 @@ int game::entity::player::get_score() {
     return sum;
 }
 
-void game::entity::player::turn(const game::roll::roll& roll) const {
+void game::entity::player::turn(roll::roll& roll) const {
+    roll.update();
+    std::cout << roll << std::endl;
     // TODO(Louis): implement player.turn()
     std::cout << _name << " : TODO player.turn()" << std::endl;
 }

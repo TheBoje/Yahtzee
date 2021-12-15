@@ -25,7 +25,7 @@ namespace game::entity {
 
         player& operator=(const player & p);
         int get_score();
-        virtual void turn(const game::roll::roll& roll) const;
+        virtual void turn(roll::roll& roll) const;
     };
 }
 
