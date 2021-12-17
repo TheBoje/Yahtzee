@@ -10,7 +10,7 @@
 namespace game::difficulty {
     class medium : public level {
     public:
-        void turn();
+        void turn(game::roll::roll &r, const std::vector<game::entity::player> &players);
     };
 }
 

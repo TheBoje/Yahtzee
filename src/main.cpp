@@ -7,13 +7,14 @@
 #include "../include/entity/player.hpp"
 #include "../include/game_manager.hpp"
 #include "../include/difficulty/easy.hpp"
+#include "../include/difficulty/hard.hpp"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
-    game::difficulty::level *easy = new game::difficulty::easy; // TODO Destroy me in gm destructor
-    game::game_manager gm(easy, 2);
+    game::difficulty::level *hard = new game::difficulty::hard; // TODO Destroy me in gm destructor
+    game::game_manager gm(hard, 2);
 
     while (gm.turn())
     {
