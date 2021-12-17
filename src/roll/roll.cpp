@@ -6,6 +6,7 @@
 
 game::roll::roll::roll()
 {
+    _dices = new dice*[NB_DICE];
     for(int i = 0; i < NB_DICE; i++)
     {
         _dices[i] = new dice(i);
@@ -18,10 +19,16 @@ game::roll::roll::~roll()
     {
         delete _dices[i];
     }
+    delete[] _dices;
 }
 
 game::roll::roll::roll(const roll &src)
 {
+    for (int i = 0; i < NB_DICE; i++) {
+        delete _dices[i];
+    }
+    delete[] _dices;
+    _dices = new dice*[NB_DICE];
     for(int i = 0; i < NB_DICE; i++)
     {
         _dices[i] = new dice(*(src._dices[i]));

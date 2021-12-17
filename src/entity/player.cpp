@@ -73,7 +73,7 @@ void game::entity::player::turn(roll::roll& roll) const {
         std::string token;
 
         std::vector<int> to_keep;
-
+        // TODO: stoi quand input = "0 2 " plante (espace a la fin)
         if(dices_to_keep.size() != 0)
         {
             while((pos = dices_to_keep.find(' ')) != std::string::npos)
