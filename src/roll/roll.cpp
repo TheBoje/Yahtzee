@@ -102,8 +102,8 @@ std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
     return os;
 }
 
-game::roll::dice *game::roll::roll::get_dices() {
-    return *_dices;
+game::roll::dice ** game::roll::roll::get_dices() const {
+    return _dices;
 }
 
 void game::roll::roll::keep_dices(std::vector<int> to_keep) {

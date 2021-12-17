@@ -21,10 +21,10 @@ namespace game::entity {
         player(const player & p);
         ~player();
 
-        void add_figure(int index, roll::roll roll) const;
+        void add_figure(int index, roll::roll& roll) const;
 
         player& operator=(const player & p);
-        int get_score();
+        int get_score() const;
         virtual void turn(roll::roll& roll) const;
     };
 }

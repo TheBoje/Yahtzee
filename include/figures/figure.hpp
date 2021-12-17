@@ -26,7 +26,7 @@ namespace game::figures {
          * and follows the rules specified <a href="https://fr.wikipedia.org/wiki/Yahtzee#Yahtzee_Domaine_public">on wikipedia yahtzee article<a/>.
          * @param dices
          */
-        virtual void parse(game::roll::dice dices[NB_DICE]) = 0;
+        virtual void parse(game::roll::dice* dices[NB_DICE]) = 0;
 
         /**
          *

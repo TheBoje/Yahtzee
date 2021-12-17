@@ -6,12 +6,12 @@
 
 game::figures::yahtzee::yahtzee() : _value(0) { }
 
-void game::figures::yahtzee::parse(game::roll::dice dices[NB_DICE]) {
+void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
     // Searching for 5 times the same dice value.
-    int value = dices[0].get_value();
+    int value = dices[0]->get_value();
     int count = 1;
     for (int i = 1; i < NB_DICE; i++) {
-        if (dices[i].get_value() == value) {
+        if (dices[i]->get_value() == value) {
             count++;
         }
     }

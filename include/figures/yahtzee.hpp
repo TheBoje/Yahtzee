@@ -21,7 +21,7 @@ namespace game::figures {
          * _points is set to POINTS_SUCCESS if parsing is successful
          * _value is set to the dice value of the yahtzee
          */
-        void parse(game::roll::dice dices[NB_DICE]) override;
+        void parse(game::roll::dice* dices[NB_DICE]) override;
     };
 }
 

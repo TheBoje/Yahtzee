@@ -12,7 +12,7 @@
 namespace game::difficulty {
     class easy : public level {
     public:
-        void turn(const game::roll::roll& r, const std::vector<game::entity::player>& players);
+        void turn(game::roll::roll& r, const std::vector<game::entity::player>& players);
     };
 }
 

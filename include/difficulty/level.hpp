@@ -15,7 +15,7 @@ namespace game::difficulty {
         std::vector<game::entity::player> _players; // NOTE(Louis): Protected ?
     public:
         //level(std::vector<game::entity::player> players); // TODO(Louis): Ca fait une copie du vecteur ou un passage par référence?
-        virtual void turn(const game::roll::roll& r, const std::vector<game::entity::player>& players) = 0;
+        virtual void turn(game::roll::roll& r, const std::vector<game::entity::player>& players) = 0;
     };
 }
 

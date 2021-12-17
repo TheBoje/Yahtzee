@@ -17,7 +17,7 @@ namespace game::figures {
         /* Accept every dice combination.
          * _points is the sum of the value of each dice.
          */
-        void parse(game::roll::dice dices[NB_DICE]) override;
+        void parse(game::roll::dice* dices[NB_DICE]) override;
     };
 }
 

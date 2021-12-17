@@ -17,16 +17,17 @@ namespace game::figures {
         sup_part(const sup_part<value> & sp);
         ~sup_part() override;
 
-        void parse(game::roll::dice dices[NB_DICE]) override;
+        void parse(game::roll::dice* dices[NB_DICE]) override;
     };
 
     template<int value>
     sup_part<value>::sup_part() {}
 
     template<int value>
-    void sup_part<value>::parse(game::roll::dice dices[NB_DICE]) {
+    void sup_part<value>::parse(game::roll::dice **dices) {
         for (int i = 0; i < game::NB_DICE; i++) {
-            if (dices[i].get_value() == value) {
+            std::cout << dices[i]->get_value() << std::endl;
+            if (dices[i]->get_value() == value) {
                 _points += value;
             }
         }
