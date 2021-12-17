@@ -12,7 +12,7 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
-    game::difficulty::level *easy = new game::difficulty::easy;
+    game::difficulty::level *easy = new game::difficulty::easy; // TODO Destroy me in gm destructor
     game::game_manager gm(easy, 2);
 
     gm.turn();

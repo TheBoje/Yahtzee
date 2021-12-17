@@ -3,6 +3,8 @@ project(Projet_COO)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(src include)
+
 include(FetchContent)
 FetchContent_Declare(
         googletest
@@ -12,6 +14,7 @@ FetchContent_Declare(
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
+
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 # Uncomment below for verbose build
@@ -26,7 +29,7 @@ file(GLOB_RECURSE MOCKS "tests/mock/*.hpp")
 
 add_executable(main src/main.cpp src/game_manager.cpp ${SOURCES_INCLUDE} ${SOURCES})
 add_executable(tests tests/test_main.cpp ${SOURCES_INCLUDE} ${SOURCES} ${SOURCES_TESTS} ${MOCKS})
-include_directories(src include)
+
 enable_testing()
 
 target_link_libraries(tests gtest_main)

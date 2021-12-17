@@ -58,7 +58,7 @@ void game::entity::player::turn(roll::roll& roll) const {
     {
         roll.update();
         std::cout << roll;
-        std::cout << "Witch dice do you want to keep ?" << std::endl;
+        std::cout << "Which dice do you want to keep ?" << std::endl;
 
 
         std::string dices_to_keep;
