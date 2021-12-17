@@ -15,6 +15,10 @@ int main() {
     game::difficulty::level *easy = new game::difficulty::easy; // TODO Destroy me in gm destructor
     game::game_manager gm(easy, 2);
 
-    gm.turn();
+    while (gm.turn())
+    {
+
+    }
+
     return EXIT_SUCCESS;
 }
