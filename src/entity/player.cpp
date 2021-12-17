@@ -12,6 +12,8 @@
 #include "../../include/figures/yahtzee.hpp"
 #include "../../include/figures/chance.hpp"
 
+#include "constant.hpp"
+
 game::entity::player::player(std::string name) : _name(std::move(name)) {
     // Fill _figures with empty figures!
     _figures.reserve(13);
@@ -30,12 +32,12 @@ game::entity::player::player(std::string name) : _name(std::move(name)) {
     _figures.push_back(new figures::chance());
 }
 
-int game::entity::player::get_score() {
+int game::entity::player::get_score() const {
     int sum = 0;
     int sup_part_sum = 0;
 
     for (int i = 0; i < 6; i++) {
-        sup_part_sum += *_figures.at(i);
+        sup_part_sum += _figures.at(i)->get_points();
     }
 
     for (int i = 6; i < (int)_figures.size(); i++) {
@@ -52,6 +54,8 @@ int game::entity::player::get_score() {
 }
 
 void game::entity::player::turn(roll::roll& roll) const {
+
+    // TODO : vérifier qu'on est bien dans les clous pour le choix des dès à garder
 
     std::cin.ignore(256, '\n');
     for(int i = 0; i < NB_REROLL_MAX; i++)
@@ -140,7 +144,7 @@ game::entity::player &game::entity::player::operator=(const game::entity::player
     return *this;
 }
 
-void game::entity::player::add_figure(int index, roll::roll roll) const {
+void game::entity::player::add_figure(int index, roll::roll& roll) const {
     if(index >= 0 && index < _figures.size())
         _figures[index]->parse(roll.get_dices());
 }

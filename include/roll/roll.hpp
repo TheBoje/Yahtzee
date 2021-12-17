@@ -12,7 +12,7 @@
 
 namespace game::roll {
     class roll {
-        dice* _dices[NB_DICE];
+        dice** _dices;
 
     public:
         roll();
@@ -31,7 +31,7 @@ namespace game::roll {
          */
         void reset() const;
 
-        game::roll::dice * get_dices();
+        dice ** get_dices() const;
 
         void keep_dices(std::vector<int> to_keep);
 

@@ -21,7 +21,7 @@ namespace game::figures {
          * _points is set to POINTS_SUCCESS if parsing is successful
          * _start_val is set to the first dice value of the straight
          */
-        void parse(game::roll::dice dices[NB_DICE]) override;
+        void parse(game::roll::dice* dices[NB_DICE]) override;
     };
 }
 

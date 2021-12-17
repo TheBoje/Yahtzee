@@ -20,7 +20,7 @@ namespace game::figures {
          * _points is set to the sum of the dices values
          * _value is set to the dice value of the square
          */
-        void parse(game::roll::dice dices[NB_DICE]) override;
+        void parse(game::roll::dice* dices[NB_DICE]) override;
     };
 }
 

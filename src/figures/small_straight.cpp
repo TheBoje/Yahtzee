@@ -8,7 +8,7 @@
 game::figures::small_straight::small_straight() { }
 
 
-void game::figures::small_straight::parse(game::roll::dice dices[NB_DICE]) {
+void game::figures::small_straight::parse(game::roll::dice* dices[NB_DICE]) {
     // Searching for a straight of 4 dices, spaced by one (dices[n] = dices[n + 1] - 1)
     std::sort(&dices[0], &dices[NB_DICE - 1]);
     int wildcard = 0;
@@ -18,7 +18,7 @@ void game::figures::small_straight::parse(game::roll::dice dices[NB_DICE]) {
          * or d[i] < d[i+1] - 1). If we find more, this is not
          * a small_straight!
          * */
-        if (dices[i].get_value() != dices[i].get_value() - 1){
+        if (dices[i]->get_value() != dices[i]->get_value() - 1){
             wildcard += 1;
         }
     }
@@ -28,7 +28,7 @@ void game::figures::small_straight::parse(game::roll::dice dices[NB_DICE]) {
         /* start val is either the first or the second dice of the sorted list
          * if d[0] and d[1] are following, d[0] is the start value, else its d[1]
          * */
-        _start_val = (dices[0].get_value() == dices[1].get_value() - 1 ? dices[0].get_value() : dices[1].get_value());
+        _start_val = (dices[0]->get_value() == dices[1]->get_value() - 1 ? dices[0]->get_value() : dices[1]->get_value());
     }
 }
 

@@ -24,7 +24,7 @@ namespace game::figures {
          * _value_pair is set to the dice value of the pair
          * _value_toak is set tot the dice value of the toak
          */
-        void parse(game::roll::dice dices[NB_DICE]) override;
+        void parse(game::roll::dice* dices[NB_DICE]) override;
     };
 }
 
