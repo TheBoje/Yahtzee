@@ -14,6 +14,7 @@ namespace game {
     constexpr int MIN_VALUE = 1;
     constexpr int BONUS_REQUIRED = 63;
     constexpr int BONUS_VALUE = 63;
+    constexpr int NB_REROLL_MAX = 3;
 
     const std::string DICE_TOP =                    "┌───────┐";
     const std::string DICE_TWO_IN_ROW =             "│ ■   ■ │";

@@ -52,7 +52,7 @@ void game::roll::roll::update() {
     }
 }
 
-void game::roll::roll::reset() {
+void game::roll::roll::reset() const {
     for(int i = 0; i < NB_DICE; i++)
     {
         _dices[i]->roll();
@@ -71,13 +71,32 @@ std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
 
 
 
-    for(int i = 0; i < dices_printer.size(); i++)
+    for(int i = 0; i < dices_printer[0].size() + 1; i++)
     {
-        for(int j = 0; j < dices_printer[i].size(); j++)
+        for(int j = 0; j < dices_printer.size(); j++)
         {
             // We invert i and j because we want to print all the first dice line in the same line
-            os << dices_printer[j][i] << " ";
+            if(!r._dices[j]->get_is_kept())
+            {
+                if(i == dices_printer[0].size())
+                    std::cout << "   " << j << "   ";
+                else
+                    os << dices_printer[j][i] << " ";
+            }
         }
+        std::cout << " |  ";
+        for(int j = 0; j < dices_printer[0].size(); j++)
+        {
+            // We invert i and j because we want to print all the first dice line in the same line
+            if(r._dices[j]->get_is_kept())
+            {
+                if(i == dices_printer[0].size())
+                    std::cout << j << " ";
+                else
+                    os << dices_printer[j][i] << " ";
+            }
+        }
+
         os << std::endl;
     }
     return os;
@@ -85,4 +104,11 @@ std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
 
 game::roll::dice *game::roll::roll::get_dices() {
     return *_dices;
+}
+
+void game::roll::roll::keep_dices(std::vector<int> to_keep) {
+    for(int i : to_keep)
+    {
+        _dices[i]->keep();
+    }
 }

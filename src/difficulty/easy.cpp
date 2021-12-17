@@ -9,9 +9,11 @@ void game::difficulty::easy::turn(const game::roll::roll &r, const std::vector<g
     {
         players[i].turn((roll::roll &)(r));
 
+        std::cout << "Choix de la figure à remplir : ";
         int figure;
         std::cin >> figure;
 
         players[i].add_figure(figure, r);
+        r.reset();
     }
 }

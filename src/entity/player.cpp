@@ -52,10 +52,43 @@ int game::entity::player::get_score() {
 }
 
 void game::entity::player::turn(roll::roll& roll) const {
-    roll.update();
-    std::cout << roll << std::endl;
-    // TODO(Louis): implement player.turn()
-    std::cout << _name << " : TODO player.turn()" << std::endl;
+
+    std::cin.ignore(256, '\n');
+    for(int i = 0; i < NB_REROLL_MAX; i++)
+    {
+        roll.update();
+        std::cout << roll;
+        std::cout << "Witch dice do you want to keep ?" << std::endl;
+
+
+        std::string dices_to_keep;
+        std::getline(std::cin, dices_to_keep);
+        std::cout << dices_to_keep << std::endl;
+
+        size_t pos = 0;
+        std::string token;
+
+        std::vector<int> to_keep;
+
+        if(dices_to_keep.size() != 0)
+        {
+            while((pos = dices_to_keep.find(' ')) != std::string::npos)
+            {
+                token = dices_to_keep.substr(0, pos);
+                to_keep.push_back(stoi(token));
+                dices_to_keep.erase(0, pos + 1);
+            }
+
+            token = dices_to_keep.substr(0, pos);
+            to_keep.push_back(stoi(token));
+            dices_to_keep.erase(0, pos + 1);
+        }
+
+
+
+        roll.keep_dices(to_keep);
+    }
+    std::cout << roll;
 }
 
 game::entity::player::player(const game::entity::player &p) {

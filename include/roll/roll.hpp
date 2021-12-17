@@ -29,9 +29,11 @@ namespace game::roll {
         /**
          * Reset the kept array by setting all the values to false
          */
-        void reset();
+        void reset() const;
 
         game::roll::dice * get_dices();
+
+        void keep_dices(std::vector<int> to_keep);
 
         friend std::ostream& operator<<(std::ostream& os, const roll& r);
 
