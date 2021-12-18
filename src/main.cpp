@@ -7,15 +7,18 @@
 #include "../include/entity/player.hpp"
 #include "../include/game_manager.hpp"
 #include "../include/difficulty/easy.hpp"
+#include "../include/difficulty/medium.hpp"
 #include "difficulty/hard.hpp"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
+    // TODO instead of passing it as arg -> enum for difficulty and gm create it so you can destroy it in gm destructor
     game::difficulty::level *hard = new game::difficulty::hard; // TODO Destroy me in gm destructor
     game::difficulty::level *easy = new game::difficulty::easy;
-    game::game_manager gm(easy, 2);
+    game::difficulty::level *medium = new game::difficulty::medium;
+    game::game_manager gm(medium, 2);
 
     while (gm.turn()) {
 
