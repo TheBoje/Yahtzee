@@ -7,6 +7,7 @@
 #include "../include/entity/player.hpp"
 #include "../include/game_manager.hpp"
 #include "../include/difficulty/easy.hpp"
+#include "difficulty/hard.hpp"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
