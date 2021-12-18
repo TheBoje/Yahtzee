@@ -66,7 +66,7 @@ void game::entity::player::parse_dices_to_keep(std::string &dices_to_keep, std::
                 token = dices_to_keep.substr(0, pos);
                 int val = stoi(token);
 
-                if(val > 0 && val < NB_DICE)
+                if(val >= 0 && val < NB_DICE)
                     to_keep.push_back(val);
                 else
                     std::cout << val << " is not a valid dice number!" << std::endl;
@@ -81,7 +81,7 @@ void game::entity::player::parse_dices_to_keep(std::string &dices_to_keep, std::
 
             int val = stoi(token);
 
-            if(val > 0 && val < NB_DICE)
+            if(val >= 0 && val < NB_DICE)
                 to_keep.push_back(val);
             else
                 std::cout << val << " is not a valid dice number!" << std::endl;

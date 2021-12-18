@@ -8,6 +8,7 @@
 #include "../include/game_manager.hpp"
 #include "../include/difficulty/easy.hpp"
 #include "../include/difficulty/medium.hpp"
+#include "../include/difficulty/impossible.hpp"
 #include "difficulty/hard.hpp"
 
 int main() {
@@ -18,7 +19,8 @@ int main() {
     game::difficulty::level *hard = new game::difficulty::hard; // TODO Destroy me in gm destructor
     game::difficulty::level *easy = new game::difficulty::easy;
     game::difficulty::level *medium = new game::difficulty::medium;
-    game::game_manager gm(medium, 2);
+    game::difficulty::level *impossible = new game::difficulty::impossible;
+    game::game_manager gm(impossible, 2);
 
     while (gm.turn()) {
 
