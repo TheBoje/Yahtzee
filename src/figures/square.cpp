@@ -37,6 +37,8 @@ void game::figures::square::parse(game::roll::dice* dices[NB_DICE]) {
         _value = (count_fst >= 4 ? value_fst : value_lst);
     }
     std::cout << "Square figure points : " << _points << std::endl;
+
+    _is_set = true;
 }
 
 game::figures::square::square(const game::figures::square &s) {

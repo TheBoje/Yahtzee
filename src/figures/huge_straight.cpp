@@ -31,6 +31,8 @@ void game::figures::huge_straight::parse(game::roll::dice* dices[NB_DICE]) {
         _start_val = dices[0]->get_value();
     }
     std::cout << "Huge straight figure points : " << _points << std::endl;
+
+    _is_set = true;
 }
 
 game::figures::huge_straight::huge_straight(const game::figures::huge_straight &hs) {

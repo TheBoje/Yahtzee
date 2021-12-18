@@ -43,6 +43,8 @@ void game::figures::toak::parse(game::roll::dice* dices[NB_DICE]) {
         }
         _value = res;
     }
+
+    _is_set = true;
 }
 
 game::figures::toak::toak(const game::figures::toak &t)  {

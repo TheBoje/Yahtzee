@@ -12,6 +12,7 @@ namespace game::figures {
     class figure {
     protected:
         int _points = 0;
+        bool _is_set = false;
     public:
         virtual ~figure() = default;
 

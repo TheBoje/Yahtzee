@@ -32,6 +32,8 @@ void game::figures::small_straight::parse(game::roll::dice* dices[NB_DICE]) {
         _start_val = (dices[0]->get_value() == dices[1]->get_value() - 1 ? dices[0]->get_value() : dices[1]->get_value());
     }
     std::cout << "Small straight figure points : " << _points << std::endl;
+
+    _is_set = true;
 }
 
 game::figures::small_straight::small_straight(const game::figures::small_straight &ss) {

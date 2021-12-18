@@ -39,6 +39,8 @@ void game::figures::full::parse(game::roll::dice* dices[NB_DICE]) {
         _value_pair = first_val;
         _value_toak = last_val;
     }
+
+    _is_set = true;
 }
 
 game::figures::full::full(const game::figures::full &f) {

@@ -22,6 +22,8 @@ void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
         _value = value;
     }
     std::cout << "Yahtzee figure points : " << _points << std::endl;
+
+    _is_set = true;
 }
 
 game::figures::yahtzee::yahtzee(const game::figures::yahtzee &y) {
