@@ -16,6 +16,8 @@ namespace game::entity {
     private:
         std::string _name;
         std::vector<game::figures::figure *> _figures;
+
+        void parse_dices_to_keep(std::string& dices_to_keep, std::vector<int>& to_keep) const;
     public:
         player(std::string& name);
         player(const player & p);

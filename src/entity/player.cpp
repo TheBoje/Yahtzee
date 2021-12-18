@@ -53,6 +53,43 @@ int game::entity::player::get_score() const {
     return sum;
 }
 
+void game::entity::player::parse_dices_to_keep(std::string &dices_to_keep, std::vector<int> &to_keep) const {
+    size_t pos;
+    std::string token;
+
+    if(dices_to_keep.size() != 0)
+    {
+        while((pos = dices_to_keep.find(' ')) != std::string::npos)
+        {
+            if(pos < dices_to_keep.size())
+            {
+                token = dices_to_keep.substr(0, pos);
+                int val = stoi(token);
+
+                if(val > 0 && val < NB_DICE)
+                    to_keep.push_back(val);
+                else
+                    std::cout << val << " is not a valid dice number!" << std::endl;
+
+                dices_to_keep.erase(0, pos + 1);
+            }
+        }
+
+        if(dices_to_keep.size() > 0)
+        {
+            token = dices_to_keep.substr(0, pos);
+
+            int val = stoi(token);
+
+            if(val > 0 && val < NB_DICE)
+                to_keep.push_back(val);
+            else
+                std::cout << val << " is not a valid dice number!" << std::endl;
+        }
+    }
+
+}
+
 void game::entity::player::turn(roll::roll& roll) const {
 
     // TODO : vérifier qu'on est bien dans les clous pour le choix des dès à garder
@@ -71,32 +108,9 @@ void game::entity::player::turn(roll::roll& roll) const {
         std::getline(std::cin, dices_to_keep);
         std::cout << dices_to_keep << std::endl;
 
-        size_t pos = 0;
-        std::string token;
-
         std::vector<int> to_keep;
-        // TODO: stoi quand input = "0 2 " plante (espace a la fin)
-        if(dices_to_keep.size() != 0)
-        {
-            while((pos = dices_to_keep.find(' ')) != std::string::npos)
-            {
-                if(pos < dices_to_keep.size())
-                {
-                    token = dices_to_keep.substr(0, pos);
-                    to_keep.push_back(stoi(token));
-                    dices_to_keep.erase(0, pos + 1);
-                }
-            }
 
-            if(pos < dices_to_keep.size())
-            {
-                token = dices_to_keep.substr(0, pos);
-                to_keep.push_back(stoi(token));
-                dices_to_keep.erase(0, pos + 1);
-            }
-        }
-
-
+        parse_dices_to_keep(dices_to_keep, to_keep);
 
         roll.keep_dices(to_keep);
     }
