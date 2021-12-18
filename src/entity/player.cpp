@@ -14,7 +14,7 @@
 
 #include "constant.hpp"
 
-game::entity::player::player(std::string& name) : _name(std::move(name)) {
+game::entity::player::player(std::string& name) : _name(name) {
     // Fill _figures with empty figures!
     _figures.reserve(13);
     _figures.push_back(new figures::sup_part<1>());
@@ -25,10 +25,10 @@ game::entity::player::player(std::string& name) : _name(std::move(name)) {
     _figures.push_back(new figures::sup_part<6>());
     _figures.push_back(new figures::toak());
     _figures.push_back(new figures::small_straight());
-    _figures.push_back(new figures::huge_straight());  // KO
+    _figures.push_back(new figures::huge_straight());
     _figures.push_back(new figures::full());
-    _figures.push_back(new figures::square());      // ?
-    _figures.push_back(new figures::yahtzee());     // ?
+    _figures.push_back(new figures::square());
+    _figures.push_back(new figures::yahtzee());
     _figures.push_back(new figures::chance());
 }
 
@@ -59,7 +59,7 @@ void game::entity::player::turn(roll::roll& roll) const {
 
     std::cout << _name << "' turn : " << std::endl;
 
-    std::cin.ignore(256, '\n');
+//    std::cin.ignore(256, '\n');
     for(int i = 0; i < NB_REROLL_MAX; i++)
     {
         roll.update();

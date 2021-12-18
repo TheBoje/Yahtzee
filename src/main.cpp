@@ -14,7 +14,8 @@ int main() {
     //game::entity::player p("Louis");
 
     game::difficulty::level *hard = new game::difficulty::hard; // TODO Destroy me in gm destructor
-    game::game_manager gm(hard, 2);
+    game::difficulty::level *easy = new game::difficulty::easy;
+    game::game_manager gm(easy, 2);
 
     while (gm.turn()) {
 

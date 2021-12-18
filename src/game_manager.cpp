@@ -11,7 +11,7 @@ game::game_manager::game_manager(game::difficulty::level *level, int player_coun
     for (int i = 0; i < player_count; i++) {
         std::cout << "Enter the name of player number " << i << " : ";
         std::string name;
-        std::cin >> name; // Note(Louis): std::cin stops at whitespaces, \n and \t, maybe add checks ? Or maybe use another method (getline()?)
+        getline( std::cin, name );
         game::entity::player p(name);
         _players.push_back(p);
     }
