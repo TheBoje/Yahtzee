@@ -59,7 +59,7 @@ void game::entity::player::turn(roll::roll& roll) const {
 
     std::cout << _name << "' turn : " << std::endl;
 
-//    std::cin.ignore(256, '\n');
+    std::cin.ignore(256, '\n');
     for(int i = 0; i < NB_REROLL_MAX; i++)
     {
         roll.update();
@@ -80,14 +80,20 @@ void game::entity::player::turn(roll::roll& roll) const {
         {
             while((pos = dices_to_keep.find(' ')) != std::string::npos)
             {
+                if(pos < dices_to_keep.size())
+                {
+                    token = dices_to_keep.substr(0, pos);
+                    to_keep.push_back(stoi(token));
+                    dices_to_keep.erase(0, pos + 1);
+                }
+            }
+
+            if(pos < dices_to_keep.size())
+            {
                 token = dices_to_keep.substr(0, pos);
                 to_keep.push_back(stoi(token));
                 dices_to_keep.erase(0, pos + 1);
             }
-
-            token = dices_to_keep.substr(0, pos);
-            to_keep.push_back(stoi(token));
-            dices_to_keep.erase(0, pos + 1);
         }
 
 
