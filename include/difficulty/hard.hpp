@@ -12,6 +12,10 @@ namespace game::difficulty {
         int _num_figure;
     public:
         hard();
+
+        /**
+         * A hard turn choose the figures in the order.
+         * */
         void turn(game::roll::roll &r, const std::vector<game::entity::player> &players);
     };
 }

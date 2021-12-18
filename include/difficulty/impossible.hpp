@@ -14,6 +14,10 @@ namespace game::difficulty {
         int _fig_index;
     public:
         impossible();
+
+        /**
+         * An impossible turn choose the figure in disorder.
+         * */
         void turn(game::roll::roll& r, const std::vector<game::entity::player>& players);
     };
 }

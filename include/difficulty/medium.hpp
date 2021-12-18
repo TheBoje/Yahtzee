@@ -10,6 +10,10 @@
 namespace game::difficulty {
     class medium : public level {
     public:
+        /**
+         * A medium turn let the player choose which figure he wants to fill in the sup part first and after completing
+         * the sup part, choose which figure in the inf part.
+         * */
         void turn(game::roll::roll &r, const std::vector<game::entity::player> &players);
     };
 }
