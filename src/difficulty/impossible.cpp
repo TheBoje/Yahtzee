@@ -30,9 +30,9 @@ game::difficulty::impossible::impossible() : _fig_index(0)
 void game::difficulty::impossible::turn(game::roll::roll &r, const std::vector<game::entity::player> &players) {
     for(int i = 0; i < players.size(); i++)
     {
+        std::cout << "Figure à remplir : " << _order[_fig_index] << std::endl;
         players[i].turn(r);
 
-        std::cout << "Figure à remplir : " << _order[_fig_index] << std::endl;
         players[i].add_figure(_order[_fig_index], r);
         r.reset();
         std::cout << "player points : " << players[i].get_score() << std::endl;

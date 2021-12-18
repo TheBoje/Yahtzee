@@ -23,7 +23,7 @@ namespace game::entity {
         player(const player & p);
         ~player();
 
-        void add_figure(int index, roll::roll& roll) const;
+        bool add_figure(int index, roll::roll& roll) const;
 
         /*
          * Those methods are here to help the computation for the different levels

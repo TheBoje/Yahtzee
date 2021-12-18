@@ -20,14 +20,14 @@ void game::difficulty::medium::turn(game::roll::roll &r, const std::vector<game:
             if(!player.is_sup_part_done())
             {
                 if(figure >= 0 && figure < NB_TURNS / 2)
-                    valid_choice = true;
+                    valid_choice = player.add_figure(figure, r);
                 else
                     std::cout << "Please choose a sup part figure" << std::endl;
             }
             else
             {
                 if(figure >= NB_TURNS / 2 && figure < NB_TURNS)
-                    valid_choice = true;
+                    valid_choice = player.add_figure(figure, r);
                 else
                     std::cout << "Please choose an inf part figure" << std::endl;
             }
@@ -36,7 +36,7 @@ void game::difficulty::medium::turn(game::roll::roll &r, const std::vector<game:
 
 
 
-        player.add_figure(figure, r);
+
         r.reset();
         std::cout << "player points : " << player.get_score() << std::endl;
     }

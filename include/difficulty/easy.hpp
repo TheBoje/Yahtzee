@@ -12,6 +12,9 @@
 namespace game::difficulty {
     class easy : public level {
     public:
+        /**
+         * An easy turn let the player choose which figure he wants to fill.
+         * */
         void turn(game::roll::roll& r, const std::vector<game::entity::player>& players);
     };
 }

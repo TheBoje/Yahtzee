@@ -166,9 +166,13 @@ game::entity::player &game::entity::player::operator=(const game::entity::player
     return *this;
 }
 
-void game::entity::player::add_figure(int index, roll::roll& roll) const {
-    if(index >= 0 && index < _figures.size())
+bool game::entity::player::add_figure(int index, roll::roll& roll) const {
+    if(index >= 0 && index < _figures.size() && !_figures[index]->get_is_set())
+    {
         _figures[index]->parse(roll.get_dices());
+        return true;
+    }
+    return false;
 }
 
 bool game::entity::player::is_sup_part_done() const {

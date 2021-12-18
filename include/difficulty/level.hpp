@@ -14,7 +14,12 @@ namespace game::difficulty {
     protected:
         std::vector<game::entity::player> _players; // NOTE(Louis): Protected ?
     public:
-        //level(std::vector<game::entity::player> players); // TODO(Louis): Ca fait une copie du vecteur ou un passage par référence?
+        /**
+         * The turn will be defined by the difficulty level. A turn is (most of the time) one round between
+         * all players. It's the level that decide how the figures needs to be filled.
+         * @param r dices that will be rolled during the game
+         * @param players vector of players playing
+         */
         virtual void turn(game::roll::roll& r, const std::vector<game::entity::player>& players) = 0;
     };
 }
