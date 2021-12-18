@@ -6,7 +6,8 @@
 
 game::game_manager::game_manager(game::difficulty::level *level, int player_count) :
         _level(level),
-        _roll() {
+        _roll(),
+        turn_count(0) {
     _players.reserve(player_count);
     for (int i = 0; i < player_count; i++) {
         std::cout << "Enter the name of player number " << i << " : ";
@@ -21,7 +22,14 @@ game::game_manager::game_manager(game::difficulty::level *level, int player_coun
 // Return true if the game is finished
 bool game::game_manager::turn() {
     // The game is finished
-    if (turn_count >= 13) {
+    if (turn_count >= NB_TURNS) {
+
+        for(game::entity::player& p : _players)
+        {
+            // TODO redéfinir l'opérateur << pour le player ?
+            std::cout << "player " << p.get_score() << std::endl;
+        }
+
         return false;
     }
 
