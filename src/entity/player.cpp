@@ -170,3 +170,21 @@ void game::entity::player::add_figure(int index, roll::roll& roll) const {
     if(index >= 0 && index < _figures.size())
         _figures[index]->parse(roll.get_dices());
 }
+
+bool game::entity::player::is_sup_part_done() const {
+    for(int i = 0; i < (NB_TURNS / 2); i++)
+    {
+        if(!_figures[i]->get_is_set())
+            return false;
+    }
+    return true;
+}
+
+bool game::entity::player::is_sup_inf_done() const {
+    for(int i = (NB_TURNS / 2); i < NB_TURNS; i++)
+    {
+        if(!_figures[i]->get_is_set())
+            return false;
+    }
+    return true;
+}

@@ -7,3 +7,7 @@
 int game::figures::figure::get_points() const {
     return _points;
 }
+
+bool game::figures::figure::get_is_set() const {
+    return _is_set;
+}

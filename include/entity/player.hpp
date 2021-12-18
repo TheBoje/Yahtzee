@@ -25,6 +25,13 @@ namespace game::entity {
 
         void add_figure(int index, roll::roll& roll) const;
 
+        /*
+         * Those methods are here to help the computation for the different levels
+         * (especially the medium level that needs the fill the sup part before the inf part)
+         */
+        bool is_sup_part_done() const;
+        bool is_sup_inf_done() const;
+
         player& operator=(const player & p);
         int get_score() const;
         virtual void turn(roll::roll& roll) const;

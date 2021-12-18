@@ -39,6 +39,8 @@ namespace game::figures {
          *     figure is worth n points!
          */
         int get_points() const;
+
+        bool get_is_set() const;
     };
 }
 
