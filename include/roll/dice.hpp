@@ -39,7 +39,7 @@ namespace game::roll {
 
         int operator+(int val) const;
 
-        bool operator<(const dice & d) const;
+        static bool comp(const dice * l, const dice * r);
     };
 
     std::ostream& operator<<(std::ostream& os, const dice& d);

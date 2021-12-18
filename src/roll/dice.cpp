@@ -48,10 +48,6 @@ std::ostream &game::roll::operator<<(std::ostream &os, const dice& d) {
     return os;
 }
 
-bool game::roll::dice::operator<(const game::roll::dice &d) const {
-    return (_value < d._value);
-}
-
 bool game::roll::dice::get_is_kept() const {
     return _is_kept;
 }
@@ -71,5 +67,9 @@ std::vector<std::string> game::roll::dice::get_print_vector() {
     printable.push_back(DICE_BOTTOM);
 
     return printable;
+}
+
+bool game::roll::dice::comp(const game::roll::dice *l, const game::roll::dice *r) {
+    return l->get_value() < r->get_value();
 }
 

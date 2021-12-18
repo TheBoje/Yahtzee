@@ -25,10 +25,10 @@ game::entity::player::player(std::string name) : _name(std::move(name)) {
     _figures.push_back(new figures::sup_part<6>());
     _figures.push_back(new figures::toak());
     _figures.push_back(new figures::small_straight());
-    _figures.push_back(new figures::huge_straight());
+    _figures.push_back(new figures::huge_straight());  // KO
     _figures.push_back(new figures::full());
-    _figures.push_back(new figures::square());
-    _figures.push_back(new figures::yahtzee());
+    _figures.push_back(new figures::square());      // ?
+    _figures.push_back(new figures::yahtzee());     // ?
     _figures.push_back(new figures::chance());
 }
 
@@ -41,7 +41,7 @@ int game::entity::player::get_score() const {
     }
 
     for (int i = 6; i < (int)_figures.size(); i++) {
-        sum += *_figures.at(i);
+        sum += _figures.at(i)->get_points();
     }
 
     sum += sup_part_sum;

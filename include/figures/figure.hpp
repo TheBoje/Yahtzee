@@ -39,9 +39,6 @@ namespace game::figures {
          */
         int get_points() const;
     };
-
-    int operator+=(int rh, const game::figures::figure & lh);
-
 }
 
 #endif //PROJET_COO_FIGURE_HPP

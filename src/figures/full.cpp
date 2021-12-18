@@ -14,7 +14,7 @@ void game::figures::full::parse(game::roll::dice* dices[NB_DICE]) {
      * first and last elem of the list are part of the pair and the
      * toak indepedently.
      */
-    std::sort(&dices[0], &dices[NB_DICE - 1]);
+    std::sort(dices, dices + NB_DICE, game::roll::dice::comp);
 
     int first_val = dices[0]->get_value();
     int last_val = dices[NB_DICE - 1]->get_value();

@@ -9,8 +9,9 @@ game::figures::small_straight::small_straight() { }
 
 
 void game::figures::small_straight::parse(game::roll::dice* dices[NB_DICE]) {
+    std::cout << "Parsing small straight figure" << std::endl;
     // Searching for a straight of 4 dices, spaced by one (dices[n] = dices[n + 1] - 1)
-    std::sort(&dices[0], &dices[NB_DICE - 1]);
+    std::sort(dices, dices + NB_DICE, game::roll::dice::comp);
     int wildcard = 0;
     for (int i = 0; i < NB_DICE - 1; i++) {
         /* For a small straight of NB_DICE - 1 dices, it means
@@ -18,7 +19,7 @@ void game::figures::small_straight::parse(game::roll::dice* dices[NB_DICE]) {
          * or d[i] < d[i+1] - 1). If we find more, this is not
          * a small_straight!
          * */
-        if (dices[i]->get_value() != dices[i]->get_value() - 1){
+        if (dices[i]->get_value() != dices[i + 1]->get_value() - 1){
             wildcard += 1;
         }
     }
@@ -30,6 +31,7 @@ void game::figures::small_straight::parse(game::roll::dice* dices[NB_DICE]) {
          * */
         _start_val = (dices[0]->get_value() == dices[1]->get_value() - 1 ? dices[0]->get_value() : dices[1]->get_value());
     }
+    std::cout << "Small straight figure points : " << _points << std::endl;
 }
 
 game::figures::small_straight::small_straight(const game::figures::small_straight &ss) {

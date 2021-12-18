@@ -11,6 +11,7 @@ game::figures::chance::chance() {
 
 void game::figures::chance::parse(game::roll::dice **dices) {
     // Sum of all dices values
+    _points = 0;
     for (int i = 0; i < game::NB_DICE; i++) {
        _points = *dices[i] + _points;
     }
