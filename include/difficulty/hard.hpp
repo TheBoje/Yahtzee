@@ -9,8 +9,10 @@
 
 namespace game::difficulty {
     class hard : public level {
+        int _num_figure;
     public:
-        void turn();
+        hard();
+        void turn(game::roll::roll &r, const std::vector<game::entity::player> &players);
     };
 }
 

@@ -14,7 +14,7 @@
 
 #include "constant.hpp"
 
-game::entity::player::player(std::string name) : _name(std::move(name)) {
+game::entity::player::player(std::string& name) : _name(std::move(name)) {
     // Fill _figures with empty figures!
     _figures.reserve(13);
     _figures.push_back(new figures::sup_part<1>());
@@ -56,6 +56,8 @@ int game::entity::player::get_score() const {
 void game::entity::player::turn(roll::roll& roll) const {
 
     // TODO : vérifier qu'on est bien dans les clous pour le choix des dès à garder
+
+    std::cout << _name << "' turn : " << std::endl;
 
     std::cin.ignore(256, '\n');
     for(int i = 0; i < NB_REROLL_MAX; i++)

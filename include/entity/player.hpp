@@ -17,7 +17,7 @@ namespace game::entity {
         std::string _name;
         std::vector<game::figures::figure *> _figures;
     public:
-        player(std::string name);
+        player(std::string& name);
         player(const player & p);
         ~player();
 
