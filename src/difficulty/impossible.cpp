@@ -28,6 +28,7 @@ game::difficulty::impossible::impossible() : _fig_index(0)
 }
 
 void game::difficulty::impossible::turn(game::roll::roll &r, const std::vector<game::entity::player> &players) {
+    players[0].print_available_figures();
     for(int i = 0; i < players.size(); i++)
     {
         std::cout << "Figure à remplir : " << _order[_fig_index] << std::endl;

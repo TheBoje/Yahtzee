@@ -8,6 +8,7 @@ game::difficulty::hard::hard() : _num_figure(0)
 {}
 
 void game::difficulty::hard::turn(game::roll::roll &r, const std::vector<game::entity::player> &players) {
+    players[0].print_available_figures();
     for(int i = 0; i < players.size(); i++)
     {
         std::cout << "Figure à remplir : " << _num_figure << std::endl;

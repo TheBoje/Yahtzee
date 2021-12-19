@@ -3,3 +3,7 @@
 //
 
 #include "../../include/difficulty/level.hpp"
+
+game::difficulty::level::~level() {
+
+}
