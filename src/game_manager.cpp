@@ -31,6 +31,7 @@ game::game_manager::game_manager(const game::difficulty::level_enum& level, int 
     }
 
     _players.reserve(player_count);
+    std::cin.ignore(256, '\n');
     for (int i = 0; i < player_count; i++) {
         std::cout << "Enter the name of player number " << i << " : ";
         std::string name;
@@ -48,7 +49,7 @@ bool game::game_manager::turn() {
 
         for(game::entity::player& p : _players)
         {
-            std::cout << "player " << p.get_score() << std::endl;
+            std::cout << p << std::endl;
         }
 
         return false;

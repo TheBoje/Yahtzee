@@ -202,3 +202,9 @@ void game::entity::player::print_available_figures() const {
             std::cout << i << " : " << _figures[i]->get_label() << std::endl;
     }
 }
+
+std::ostream &game::entity::operator<<(std::ostream &os, const game::entity::player &p) {
+    os << p._name << " : " << p.get_score() << " pts" << std::endl;
+    return os;
+}
+

@@ -10,7 +10,12 @@
 #include "../roll/roll.hpp"
 
 namespace game::difficulty {
-    enum class level_enum {EASY, MEDIUM, HARD, IMPOSSIBLE};
+    enum class level_enum {
+        EASY = 0,
+        MEDIUM = 1,
+        HARD = 2,
+        IMPOSSIBLE = 3
+    };
 
     class level {
     protected:
@@ -23,6 +28,7 @@ namespace game::difficulty {
          * @param players vector of players playing
          */
         virtual void turn(game::roll::roll& r, const std::vector<game::entity::player>& players) = 0;
+        virtual ~level();
     };
 }
 

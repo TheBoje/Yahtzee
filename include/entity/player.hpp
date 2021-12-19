@@ -36,7 +36,10 @@ namespace game::entity {
         void print_available_figures() const;
         int get_score() const;
         virtual void turn(roll::roll& roll) const;
+
+        friend std::ostream& operator<<(std::ostream& os, const player& p);
     };
+
 }
 
 #endif //PROJET_COO_PLAYER_HPP
