@@ -19,7 +19,15 @@ namespace game {
         int turn_count = 0;
 
     public:
-        game_manager(game::difficulty::level * level, int player_count);
+        game_manager(const game::difficulty::level_enum& level, int player_count);
+        game_manager(const game_manager& gm);
+
+        ~game_manager();
+
+        game_manager& operator=(const game_manager& gm);
+
+
+
         bool turn();
     };
 }

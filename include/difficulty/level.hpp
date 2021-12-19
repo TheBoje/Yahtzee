@@ -10,6 +10,8 @@
 #include "../roll/roll.hpp"
 
 namespace game::difficulty {
+    enum class level_enum {EASY, MEDIUM, HARD, IMPOSSIBLE};
+
     class level {
     protected:
         std::vector<game::entity::player> _players; // NOTE(Louis): Protected ?

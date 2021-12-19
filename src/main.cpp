@@ -15,12 +15,8 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     //game::entity::player p("Louis");
 
-    // TODO instead of passing it as arg -> enum for difficulty and gm create it so you can destroy it in gm destructor
-    game::difficulty::level *hard = new game::difficulty::hard; // TODO Destroy me in gm destructor
-    game::difficulty::level *easy = new game::difficulty::easy;
-    game::difficulty::level *medium = new game::difficulty::medium;
-    game::difficulty::level *impossible = new game::difficulty::impossible;
-    game::game_manager gm(easy, 2);
+
+    game::game_manager gm(game::difficulty::level_enum::MEDIUM, 2);
 
     while (gm.turn()) {
 
