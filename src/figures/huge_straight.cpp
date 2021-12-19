@@ -6,7 +6,10 @@
 #include <algorithm>
 
 
-game::figures::huge_straight::huge_straight() : _start_val(0) { }
+game::figures::huge_straight::huge_straight() : _start_val(0)
+{
+    _label = "huge straight";
+}
 
 void game::figures::huge_straight::parse(game::roll::dice* dices[NB_DICE]) {
     std::cout << "Parsing huge straight figure" << std::endl;

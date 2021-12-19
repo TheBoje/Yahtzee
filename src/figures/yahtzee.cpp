@@ -4,7 +4,10 @@
 
 #include "../../include/figures/yahtzee.hpp"
 
-game::figures::yahtzee::yahtzee() : _value(0) { }
+game::figures::yahtzee::yahtzee() : _value(0)
+{
+    _label = "yahtzee";
+}
 
 void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
     std::cout << "Parsing yahtzee figure" << std::endl;

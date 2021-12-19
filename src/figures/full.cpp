@@ -6,7 +6,10 @@
 #include "../include/figures/full.hpp"
 #include "../include/constant.hpp"
 
-game::figures::full::full() : _value_pair(0), _value_toak(0) { }
+game::figures::full::full() : _value_pair(0), _value_toak(0)
+{
+    _label = "full";
+}
 
 void game::figures::full::parse(game::roll::dice* dices[NB_DICE]) {
     /* Searching for a pair AND toak.

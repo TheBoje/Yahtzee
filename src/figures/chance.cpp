@@ -5,8 +5,9 @@
 #include "../../include/figures/chance.hpp"
 #include "../include/constant.hpp"
 
-game::figures::chance::chance() {
-
+game::figures::chance::chance()
+{
+    _label = "chance";
 }
 
 void game::figures::chance::parse(game::roll::dice **dices) {

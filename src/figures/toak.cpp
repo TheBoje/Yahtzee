@@ -5,8 +5,9 @@
 #include <algorithm>
 #include "../../include/figures/toak.hpp"
 
-game::figures::toak::toak() : _value(0) {
-
+game::figures::toak::toak() : _value(0)
+{
+    _label = "three in a row";
 }
 
 void game::figures::toak::parse(game::roll::dice* dices[NB_DICE]) {

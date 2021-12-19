@@ -13,6 +13,7 @@ namespace game::figures {
     protected:
         int _points = 0;
         bool _is_set = false;
+        std::string _label;
     public:
         virtual ~figure() = default;
 
@@ -41,6 +42,8 @@ namespace game::figures {
         int get_points() const;
 
         bool get_is_set() const;
+
+        std::string get_label() const;
     };
 }
 

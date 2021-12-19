@@ -5,8 +5,9 @@
 #include <algorithm>
 #include "../../include/figures/square.hpp"
 
-game::figures::square::square() {
-
+game::figures::square::square()
+{
+    _label = "square";
 }
 
 

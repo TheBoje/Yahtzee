@@ -25,6 +25,7 @@ namespace game::figures {
 
     template<int value>
     void sup_part<value>::parse(game::roll::dice **dices) {
+        _label = "superior part : " + std::to_string(value);
         for (int i = 0; i < game::NB_DICE; i++) {
             std::cout << dices[i]->get_value() << std::endl;
             if (dices[i]->get_value() == value) {
