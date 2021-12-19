@@ -86,19 +86,19 @@ std::ostream &game::roll::operator<<(std::ostream &os, const roll& r)
             if(!r._dices[j]->get_is_kept())
             {
                 if(i == dices_printer[0].size())
-                    std::cout << "   " << j << "   ";
+                    std::cout << "    " << j << "     ";
                 else
                     os << dices_printer[j][i] << " ";
             }
         }
-        std::cout << " |  ";
+        std::cout << " | ";
         for(int j = 0; j < dices_printer[0].size(); j++)
         {
             // We invert i and j because we want to print all the first dice line in the same line
             if(r._dices[j]->get_is_kept())
             {
                 if(i == dices_printer[0].size())
-                    std::cout << j << " ";
+                    std::cout << "    " << j << "     ";
                 else
                     os << dices_printer[j][i] << " ";
             }
