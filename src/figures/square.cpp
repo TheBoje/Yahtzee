@@ -10,8 +10,6 @@ game::figures::square::square() : game::figures::figure("square")
 
 
 void game::figures::square::parse(game::roll::dice* dices[NB_DICE]) {
-    std::cout << "Parsing square figure" << std::endl;
-
     // Searching for 4 times the same dice value.
     std::sort(dices, dices + NB_DICE, game::roll::dice::comp);
 
@@ -27,7 +25,6 @@ void game::figures::square::parse(game::roll::dice* dices[NB_DICE]) {
             break;
         }
     }
-    std::cout << "fst : " << count_fst << " lst : " << count_lst << std::endl;
     if (count_fst >= 4 || count_lst >= 4) {
         _points = 0;
         for (int i = 0; i < NB_DICE; i++) {
@@ -35,8 +32,6 @@ void game::figures::square::parse(game::roll::dice* dices[NB_DICE]) {
         }
         _value = (count_fst >= 4 ? value_fst : value_lst);
     }
-    std::cout << "Square figure points : " << _points << std::endl;
-
     _is_set = true;
 }
 

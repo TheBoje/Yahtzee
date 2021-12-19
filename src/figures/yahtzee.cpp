@@ -8,7 +8,6 @@ game::figures::yahtzee::yahtzee() : _value(0), game::figures::figure("yahtzee")
 {}
 
 void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
-    std::cout << "Parsing yahtzee figure" << std::endl;
     // Searching for 5 times the same dice value.
     int value = dices[0]->get_value();
     int count = 1;
@@ -22,7 +21,6 @@ void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
         _points = POINTS_SUCCESS;
         _value = value;
     }
-    std::cout << "Yahtzee figure points : " << _points << std::endl;
 
     _is_set = true;
 }

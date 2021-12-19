@@ -11,12 +11,12 @@ void game::difficulty::hard::turn(game::roll::roll &r, const std::vector<game::e
     players[0].print_available_figures();
     for(int i = 0; i < players.size(); i++)
     {
-        std::cout << "Figure à remplir : " << _num_figure << std::endl;
+        std::cout << "Selected figure : " << _num_figure << std::endl;
         players[i].turn(r);
 
         players[i].add_figure(_num_figure, r);
         r.reset();
-        std::cout << "player points : " << players[i].get_score() << std::endl;
+        std::cout << "Player points : " << players[i].get_score() << std::endl;
     }
     _num_figure++;
 
