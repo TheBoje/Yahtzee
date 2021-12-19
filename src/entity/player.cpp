@@ -192,3 +192,13 @@ bool game::entity::player::is_sup_inf_done() const {
     }
     return true;
 }
+
+void game::entity::player::print_available_figures() const {
+
+    std::cout << std::endl;
+    for(int i = 0; i < _figures.size(); i++)
+    {
+        if(!_figures[i]->get_is_set())
+            std::cout << i << " : " << _figures[i]->get_label() << std::endl;
+    }
+}

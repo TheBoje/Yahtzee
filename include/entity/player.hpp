@@ -33,6 +33,7 @@ namespace game::entity {
         bool is_sup_inf_done() const;
 
         player& operator=(const player & p);
+        void print_available_figures() const;
         int get_score() const;
         virtual void turn(roll::roll& roll) const;
     };

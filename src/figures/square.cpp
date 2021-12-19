@@ -5,10 +5,8 @@
 #include <algorithm>
 #include "../../include/figures/square.hpp"
 
-game::figures::square::square()
-{
-    _label = "square";
-}
+game::figures::square::square() : game::figures::figure("square")
+{}
 
 
 void game::figures::square::parse(game::roll::dice* dices[NB_DICE]) {
@@ -42,7 +40,7 @@ void game::figures::square::parse(game::roll::dice* dices[NB_DICE]) {
     _is_set = true;
 }
 
-game::figures::square::square(const game::figures::square &s) {
+game::figures::square::square(const game::figures::square &s) : game::figures::figure("square") {
     _points = s._points;
     _value = s._value;
 }

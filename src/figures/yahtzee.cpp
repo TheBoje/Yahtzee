@@ -4,10 +4,8 @@
 
 #include "../../include/figures/yahtzee.hpp"
 
-game::figures::yahtzee::yahtzee() : _value(0)
-{
-    _label = "yahtzee";
-}
+game::figures::yahtzee::yahtzee() : _value(0), game::figures::figure("yahtzee")
+{}
 
 void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
     std::cout << "Parsing yahtzee figure" << std::endl;
@@ -29,7 +27,7 @@ void game::figures::yahtzee::parse(game::roll::dice* dices[NB_DICE]) {
     _is_set = true;
 }
 
-game::figures::yahtzee::yahtzee(const game::figures::yahtzee &y) {
+game::figures::yahtzee::yahtzee(const game::figures::yahtzee &y) : game::figures::figure("yahtzee") {
     _points = y._points;
     _value = y._value;
 }

@@ -5,10 +5,8 @@
 #include <algorithm>
 #include "../../include/figures/toak.hpp"
 
-game::figures::toak::toak() : _value(0)
-{
-    _label = "three in a row";
-}
+game::figures::toak::toak() : game::figures::figure("three in a row"), _value(0)
+{}
 
 void game::figures::toak::parse(game::roll::dice* dices[NB_DICE]) {
     // Searching for 3 times the same dice value.
@@ -48,7 +46,7 @@ void game::figures::toak::parse(game::roll::dice* dices[NB_DICE]) {
     _is_set = true;
 }
 
-game::figures::toak::toak(const game::figures::toak &t)  {
+game::figures::toak::toak(const game::figures::toak &t) : game::figures::figure("three in a row") {
     _points = t._points;
     _value = t._value;
 }

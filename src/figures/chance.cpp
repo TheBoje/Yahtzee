@@ -5,10 +5,8 @@
 #include "../../include/figures/chance.hpp"
 #include "../include/constant.hpp"
 
-game::figures::chance::chance()
-{
-    _label = "chance";
-}
+game::figures::chance::chance() : game::figures::figure("chance")
+{}
 
 void game::figures::chance::parse(game::roll::dice **dices) {
     // Sum of all dices values
@@ -19,6 +17,7 @@ void game::figures::chance::parse(game::roll::dice **dices) {
     _is_set = true;
 }
 
-game::figures::chance::chance(const game::figures::chance &c) {
+game::figures::chance::chance(const game::figures::chance &c) : game::figures::figure("chance")
+{
     _points = c._points;
 }

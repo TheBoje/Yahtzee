@@ -4,6 +4,8 @@
 
 #include "../../include/figures/figure.hpp"
 
+#include <utility>
+
 int game::figures::figure::get_points() const {
     return _points;
 }
@@ -15,3 +17,6 @@ bool game::figures::figure::get_is_set() const {
 std::string game::figures::figure::get_label() const {
     return _label;
 }
+
+game::figures::figure::figure(std::string label) : _label(std::move(label))
+{}

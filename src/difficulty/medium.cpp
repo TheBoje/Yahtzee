@@ -15,6 +15,7 @@ void game::difficulty::medium::turn(game::roll::roll &r, const std::vector<game:
 
         do {
             std::cout << "Choix de la figure à remplir : ";
+            player.print_available_figures();
             std::cin >> figure;
 
             if(!player.is_sup_part_done())

@@ -14,6 +14,7 @@ namespace game::figures {
         int _points = 0;
         bool _is_set = false;
         std::string _label;
+        figure(std::string  label);
     public:
         virtual ~figure() = default;
 

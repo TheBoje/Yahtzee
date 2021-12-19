@@ -20,7 +20,7 @@ int main() {
     game::difficulty::level *easy = new game::difficulty::easy;
     game::difficulty::level *medium = new game::difficulty::medium;
     game::difficulty::level *impossible = new game::difficulty::impossible;
-    game::game_manager gm(impossible, 2);
+    game::game_manager gm(easy, 2);
 
     while (gm.turn()) {
 
